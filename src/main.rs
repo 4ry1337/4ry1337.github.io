@@ -1,14 +1,9 @@
-use yew::prelude::*;
+use actix_web::{App, HttpServer};
 
-#[function_component]
-fn App() -> Html {
-    html! {
-        <div class={classes!("container")}>
-            <div>{"ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz"}</div>
-        </div>
-    }
-}
-
-fn main() {
-    yew::Renderer::<App>::new().render();
+#[tokio::main]
+async fn main() -> Result<(), std::io::Error> {
+    HttpServer::new(|| App::new())
+        .bind(("127.0.0.1", 8080))?
+        .run()
+        .await
 }

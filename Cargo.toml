@@ -4,4 +4,10 @@ version = "0.1.0"
 edition = "2021"
 
 [dependencies]
-yew = { version = "0.21.0", features = ["csr"]}
+actix-web = {version = "4.9.0"}
+tokio = { version = "1.40.0", features=["full"]}
+askama_actix = "0.14.0"
+askama = { version = "0.12.1", features = ["with-actix-web"] }
+sqlx = { version = "0.8.2", features = ["runtime-tokio", "tls-native-tls","macros","chrono", "migrate", "postgres"] }
+chrono = { version = "0.4.37", features = ["serde"] }
+config = { version = "0.14", default-features = false, features = ["toml"] }
