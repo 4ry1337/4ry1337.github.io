@@ -1,0 +1,13 @@
+/* styles/main.css */
+
+/* Reset styles */
+@import url("base/normalize.css");
+@import url("base/style.css");
+
+/* Variables */
+@import url("variables/colors.css");
+@import url("variables/typography.css");
+@import url("variables/spacing.css");
+@import url("variables/borders.css");
+@import url("variables/breakpoints.css");
+@import url("variables/other.css");

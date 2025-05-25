@@ -1,0 +1,11 @@
+html,
+:host {
+  font-family: var(--font-family);
+}
+
+code,
+kbd,
+samp,
+pre {
+  font-family: var(--mono-font-family);
+}

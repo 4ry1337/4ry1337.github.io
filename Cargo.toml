@@ -3,4 +3,24 @@ name = "ary1337"
 version = "0.1.0"
 edition = "2024"
 
+[lib]
+path = "src/lib.rs"
+
+[[bin]]
+path = "src/main.rs"
+name = "ary1337"
+
 [dependencies]
+askama = "0.14.0"
+config = "0.15.11"
+urlencoding = "2.1.3"
+
+# Parsing
+serde = { version = "1.0.219", features = ["derive"] }
+serde-aux = "4.7.0"
+serde_json = "1.0.140"
+
+# Time
+chrono = { version = "0.4.39", default-features = false, features = ["clock"] }
+
+secrecy = { version = "0.10.3", features = ["serde"] }
