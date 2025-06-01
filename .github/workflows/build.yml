@@ -1,0 +1,45 @@
+name: Build and Deploy Static Site
+
+on:
+  push:
+    branches: 
+      - "main"
+  pull_request:
+    types: [opened, synchronize, reopened]
+    branches: 
+      - "main"
+
+env:
+  CARGO_TERM_COLOR: always
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    # Grant write permissions for GitHub Pages deployment
+    # permissions:
+    #   contents: write
+    steps:
+      - name: Check out the repository code
+        uses: actions/checkout@v4
+
+      - name: Install the Rust toolchain
+        uses: actions-rust-lang/setup-rust-toolchain@v1
+
+      - name: Build the Rust project in release mode
+        run: cargo build --release
+
+      - name: Generate Static Site
+        run: |
+          ./target/release/ary1337
+          # Copy all static assets to the dist directory
+          # cp -r assets/* dist/
+      - name: Setup Pages
+        uses: actions/configure-pages@v5
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: './dist'
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
+
