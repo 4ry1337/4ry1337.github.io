@@ -1,9 +1,8 @@
 use std::collections::HashMap;
 use std::fs;
-use std::path::{Path, PathBuf};
+use std::path::Path;
 
 use askama::{DynTemplate, Template};
-use tracing::info;
 
 use crate::config::Settings;
 use crate::error::Error;
@@ -25,24 +24,19 @@ impl Routes {
     }
 
     pub fn build(&self) -> Result<(), Error> {
-        if !Path::new(&self.output).exists() {
-            fs::create_dir(&self.output)?;
-        }
         for (path, template) in &self.routes {
-            let mut output_path = PathBuf::from(&self.output).join(path);
-            output_path.set_extension("html");
+            let output_path = Path::new(&format!("{}{}", self.output, path)).join("index.html");
+            if let Some(parent) = output_path.parent() {
+                fs::create_dir_all(parent)?;
+            }
             fs::write(&output_path, template.dyn_render()?)?;
-            info!("Wrote {} to {}", &path, output_path.display());
+            println!("Wrote {} to {}", &path, output_path.display());
         }
         Ok(())
     }
 
-    pub fn route(self, path: &str, template: impl Template + 'static) -> Self {
-        let mut routes = HashMap::from(self.routes);
-        routes.insert(path.to_string(), Box::new(template));
-        Self {
-            output: self.output,
-            routes,
-        }
+    pub fn route(mut self, path: &str, template: impl Template + 'static) -> Self {
+        self.routes.insert(path.to_string(), Box::new(template));
+        self
     }
 }
