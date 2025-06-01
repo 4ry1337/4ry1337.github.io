@@ -43,8 +43,7 @@ jobs:
       - name: Generate Static Site
         run: |
           ./target/release/ary1337
-          # Copy all static assets to the dist directory
-          # cp -r assets/* dist/
+          cp -r assets dist/
       - name: Setup Pages
         uses: actions/configure-pages@v5
       - name: Upload artifact
