@@ -6,6 +6,7 @@ use ary1337::{
 
 fn main() -> Result<(), Error> {
     let config = get_config().expect("Failed to read configuration.");
+
     let routes = Routes::new(config)
         .route("/", home())
         .route("/about", about());

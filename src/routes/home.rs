@@ -1,7 +1,7 @@
 use askama::Template;
 
 #[derive(Template)]
-#[template(path = "home/index.html")]
+#[template(path = "pages/home.html")]
 struct HomeTemplate<'a> {
     title: &'a str,
     description: &'a str,
