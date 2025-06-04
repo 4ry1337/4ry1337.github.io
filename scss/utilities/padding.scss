@@ -1,0 +1,35 @@
+@use "../variables/index.scss" as *;
+
+@mixin padding($direction, $number: 1) {
+  $value: $number * $spacing;
+
+  @if $direction ==t {
+    padding-top: $value;
+  }
+
+  @else if $direction ==b {
+    padding-bottom: $value;
+  }
+
+  @else if $direction ==l {
+    padding-left: $value;
+  }
+
+  @else if $direction ==r {
+    padding-right: $value;
+  }
+
+  @else if $direction ==x {
+    padding-left: $value;
+    padding-right: $value;
+  }
+
+  @else if $direction ==y {
+    padding-top: $value;
+    padding-bottom: $value;
+  }
+
+  @else {
+    padding: $value;
+  }
+}

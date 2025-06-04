@@ -1,0 +1,6 @@
+@use "../variables/index.scss" as *;
+@use "../utilities/index.scss" as *;
+
+button {
+  border: 1px solid $color-black;
+}
