@@ -1,24 +1,17 @@
 @use 'variables/index.scss' as *;
 @use 'utilities/index.scss' as *;
 
-main {
-  width: 100%;
-  margin: 0 auto;
+.topbar {
+  display: none;
 
   @include sm {
-    max-width: $breakpoint-sm;
+    display: inherit;
   }
+}
 
-  @include md {
-    max-width: $breakpoint-md;
-  }
-
-  @include lg {
-    max-width: $breakpoint-lg;
-  }
-
-  @include xl {
-    max-width: $breakpoint-xl;
+.bottombar {
+  @include sm {
+    display: none;
   }
 }
 
@@ -46,37 +39,30 @@ body {
 
 h1 {
   @include fluid-size(12, 17);
-  /* font-size: clamp(2.99rem, 6.68vi + 1.31rem, 6.66rem); */
 }
 
 h2 {
   @include fluid-size(10, 13);
-  /* font-size: clamp(2.49rem, 4.56vi + 1.35rem, 5rem); */
 }
 
 h3 {
   @include fluid-size(8, 10);
-  /* font-size: clamp(2.07rem, 3.05vi + 1.31rem, 3.75rem); */
 }
 
 h4 {
   @include fluid-size(6, 7);
-  /* font-size: clamp(1.73rem, 1.97vi + 1.23rem, 2.81rem); */
 }
 
 h5 {
   @include fluid-size(5, 5);
-  /* font-size: clamp(1.44rem, 1.22vi + 1.14rem, 2.11rem); */
 }
 
 h6 {
   @include fluid-size(4, 4);
-  /* font-size: clamp(1.2rem, 0.7vi + 1.03rem, 1.58rem); */
 }
 
 p {
   @include fluid-size(6, 7);
-  /* font-size: clamp(1.2rem, 0.7vi + 1.03rem, 1.58rem); */
 }
 
 /* line height */
@@ -107,6 +93,7 @@ h3,
 h4,
 h5,
 h6 {
+  /* @include margin(y, 2); */
   letter-spacing: -0.02rem;
 }
 

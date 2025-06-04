@@ -11,11 +11,16 @@
     <link rel="stylesheet" href="/assets/style/normalize.css" />
     <link rel="stylesheet" href="/assets/style/index.min.css" />
   </head>
-  <body class=".body">
+  <body >
     {% include "widgets/topbar.html" %}
-    <main>
+    <div class="scrollable">
+    <main class="container">
       {% block content %}{% endblock content %}
     </main>
+    <footer class="container">
+        {% include "widgets/footer.html" %}
+    </footer>
+    </div>
     {% include "widgets/bottombar.html" %}
   </body>
 </html>
