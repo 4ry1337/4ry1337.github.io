@@ -21,3 +21,122 @@ main {
     max-width: $breakpoint-xl;
   }
 }
+
+/* font family */
+
+html,
+:host {
+  font-family: $font-family;
+  font-size: $spacing * 4;
+}
+
+code,
+kbd,
+samp,
+pre {
+  font-family: $mono-font-family;
+}
+
+body {
+  font-weight: false;
+  line-height: 1.65;
+}
+
+/* font size */
+
+h1 {
+  @include fluid-size(12, 17);
+  /* font-size: clamp(2.99rem, 6.68vi + 1.31rem, 6.66rem); */
+}
+
+h2 {
+  @include fluid-size(10, 13);
+  /* font-size: clamp(2.49rem, 4.56vi + 1.35rem, 5rem); */
+}
+
+h3 {
+  @include fluid-size(8, 10);
+  /* font-size: clamp(2.07rem, 3.05vi + 1.31rem, 3.75rem); */
+}
+
+h4 {
+  @include fluid-size(6, 7);
+  /* font-size: clamp(1.73rem, 1.97vi + 1.23rem, 2.81rem); */
+}
+
+h5 {
+  @include fluid-size(5, 5);
+  /* font-size: clamp(1.44rem, 1.22vi + 1.14rem, 2.11rem); */
+}
+
+h6 {
+  @include fluid-size(4, 4);
+  /* font-size: clamp(1.2rem, 0.7vi + 1.03rem, 1.58rem); */
+}
+
+p {
+  @include fluid-size(6, 7);
+  /* font-size: clamp(1.2rem, 0.7vi + 1.03rem, 1.58rem); */
+}
+
+/* line height */
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  line-height: 120%;
+}
+
+p {
+  line-height: 150%;
+}
+
+button,
+label {
+  line-height: 100%;
+}
+
+/* letter spacing */
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  letter-spacing: -0.02rem;
+}
+
+button,
+label {
+  letter-spacing: 0.05rem;
+}
+
+/* font weights */
+
+h1,
+h2 {
+  font-weight: $font-weight-bold
+}
+
+h3,
+h4,
+h5 {
+  font-weight: $font-weight-semibold
+}
+
+h6 {
+  font-weight: $font-weight-medium
+}
+
+p {
+  font-weight: $font-weight-normal
+}
+
+button,
+label {
+  font-weight: $font-weight-semibold
+}

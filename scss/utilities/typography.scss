@@ -1,0 +1,26 @@
+@use "../variables/index.scss" as *;
+@use "../variables/index.scss" as *;
+
+@mixin fluid-size($min_font_size_multiplier, $max_font_size_multiplier) {
+  $min_viewport_width: 30rem;
+  $max_viewport_width: $breakpoint-xl;
+  $scale: 1;
+
+  // Calculate actual font sizes by multiplying with spacing
+  $min_font_size: $min_font_size_multiplier * $spacing;
+  $max_font_size: $max_font_size_multiplier * $spacing;
+
+  // Calculate viewport width offset (as percentage)
+  $viewport_width_offset: $min_viewport_width / 100;
+
+  // Calculate linear factor
+  $linear_factor: 100 * (($max_font_size - $min_font_size) / ($max_viewport_width - $min_viewport_width));
+
+  // Scale linear factor by minimum font size
+  $linear_factor_scaled: $linear_factor * $scale;
+
+  // Apply clamp formula
+  font-size: clamp(#{$min_font_size},
+    #{$min_font_size} + ((1vw - #{$viewport_width_offset}) * #{$linear_factor_scaled}),
+    #{$max_font_size});
+}
