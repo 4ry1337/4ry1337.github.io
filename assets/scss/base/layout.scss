@@ -1,0 +1,39 @@
+@use '../variables/index.scss' as *;
+@use '../utilities/index.scss' as *;
+
+body {
+  color: $foreground;
+  background-color: $background;
+
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  overflow: hidden;
+}
+
+header {
+  flex: 0 0 auto;
+}
+
+.scrollable {
+  height: 0;
+  flex: 1 0 auto;
+  overflow: auto;
+  scrollbar-gutter: initial;
+}
+
+.topbar {
+  display: none;
+
+  @include sm {
+    display: inherit;
+  }
+}
+
+.bottombar {
+  display: block;
+
+  @include sm {
+    display: none;
+  }
+}

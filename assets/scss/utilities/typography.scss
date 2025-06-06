@@ -24,3 +24,10 @@
     #{$min_font_size} + ((1vw - #{$viewport_width_offset}) * #{$linear_factor_scaled}),
     #{$max_font_size});
 }
+
+@mixin line-clamp($number) {
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: $number;
+}

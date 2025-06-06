@@ -1,0 +1,54 @@
+@use 'sass:math';
+@use "../variables/index.scss" as *;
+
+@mixin border-raduis($number, $direction) {
+  $value: $number * $spacing;
+
+  @if $direction ==t {
+    border-top-left-radius: $value;
+    border-top-right-radius: $value;
+  }
+
+  @else if $direction ==b {
+    border-bottom-right-radius: $value;
+    border-bottom-left-radius: $value;
+  }
+
+  @else if $direction ==l {
+    border-top-left-radius: $value;
+    border-bottom-left-radius: $value;
+  }
+
+  @else if $direction ==r {
+    border-top-right-radius: $value;
+    border-bottom-right-radius: $value;
+  }
+
+  @else if $direction ==tr {
+    border-top-right-radius: $value;
+  }
+
+  @else if $direction ==tl {
+    border-top-left-radius: $value;
+  }
+
+  @else if $direction ==br {
+    border-bottom-right-radius: $value;
+  }
+
+  @else if $direction ==bl {
+    border-bottom-left-radius: $value;
+  }
+
+  @else {
+    border-radius: $value;
+  }
+}
+
+@mixin border-full {
+  border-radius: calc(infinity * 1px);
+}
+
+.border-full {
+  @include border-full();
+}

@@ -1,6 +1,6 @@
 @use "../variables/index.scss" as *;
 
-@mixin margin($direction, $number: 1) {
+@mixin margin($number, $direction) {
   $value: $number * $spacing;
 
   @if $direction ==t {

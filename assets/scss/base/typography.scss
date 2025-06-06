@@ -1,19 +1,5 @@
-@use 'variables/index.scss' as *;
-@use 'utilities/index.scss' as *;
-
-.topbar {
-  display: none;
-
-  @include sm {
-    display: inherit;
-  }
-}
-
-.bottombar {
-  @include sm {
-    display: none;
-  }
-}
+@use '../variables/index.scss' as *;
+@use '../utilities/index.scss' as *;
 
 /* font family */
 
