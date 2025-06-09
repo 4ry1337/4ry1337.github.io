@@ -1,0 +1,7 @@
+@use "../variables/index.scss" as *;
+
+$text-shadow-2xs: 0px 1px 0px rgba($text-shadow-color, 0.15);
+$text-shadow-xs: 0px 1px 1px rgba($text-shadow-color, 0.2);
+$text-shadow-sm: 0px 1px 0px rgba($text-shadow-color, 0.075), 0px 1px 1px rgba($text-shadow-color, 0.075), 0px 2px 2px rgba($text-shadow-color, 0.075);
+$text-shadow-md: 0px 1px 1px rgba($text-shadow-color, 0.1), 0px 1px 2px rgba($text-shadow-color, 0.1), 0px 2px 4px rgba($text-shadow-color, 0.1);
+$text-shadow-lg: 0px 1px 2px rgba($text-shadow-color, 0.1), 0px 3px 2px rgba($text-shadow-color, 0.1), 0px 4px 8px rgba($text-shadow-color, 0.1);

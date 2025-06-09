@@ -1,7 +1,6 @@
-@use 'sass:math';
 @use "../variables/index.scss" as *;
 
-@mixin border-raduis($number, $direction) {
+@mixin border-raduis($number, $direction: None) {
   $value: $number * $spacing;
 
   @if $direction ==t {

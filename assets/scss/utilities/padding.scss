@@ -1,6 +1,6 @@
 @use "../variables/index.scss" as *;
 
-@mixin padding($number, $direction) {
+@mixin padding($number, $direction: None) {
   $value: $number * $spacing;
 
   @if $direction ==t {

@@ -1,0 +1,17 @@
+@use "../variables/index.scss" as *;
+
+@mixin gap($number, $direction: None) {
+  $value: $number * $spacing;
+
+  @if $direction ==x {
+    column-gap: $value;
+  }
+
+  @else if $direction ==y {
+    row-gap: $value;
+  }
+
+  @else {
+    gap: $value;
+  }
+}
