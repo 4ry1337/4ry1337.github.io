@@ -11,3 +11,9 @@ $shadow-2xl: 0 25px 50px -12px rgba($shadow-color, 0.25);
 /* @mixin ring($color, $offset, $blur, $spread, $position) {
   box-shadow: 
 } */
+
+@mixin ring($width: 2px, $color: $ring, $offset-width: 2px,
+  $offset-color: currentColor) {
+  box-shadow: 0 0 0 #{$offset-width} #{$offset-color},
+  0 0 0 calc(#{$width} + #{$offset-width}) #{$color};
+}

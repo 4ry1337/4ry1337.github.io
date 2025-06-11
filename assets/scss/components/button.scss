@@ -1,6 +1,86 @@
+@use "sass:color";
 @use "../variables/index.scss" as *;
 @use "../utilities/index.scss" as *;
 
+.button {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  @include gap(2);
+  @include border-raduis(1.5);
+  outline: none;
+  box-shadow: $shadow-xs;
+  flex-shrink: 0;
+  white-space: nowrap;
+  background-color: $primary;
+  color: $primary-foreground;
+  transition: all;
+
+  &:hover {
+    background-color: color.change($primary, $alpha: 0.9)
+  }
+
+  &:disabled {
+    pointer-events: none;
+    opacity: 0.5;
+  }
+
+  &:focus-visible {
+    border: 1px solid $ring;
+    @include ring(3px, color.change($ring, $alpha: 0.5))
+  }
+
+  &:has(>svg) {
+    @include padding(3, "x");
+  }
+
+  svg {
+    width: $spacing * 4;
+    height: $spacing * 4;
+    flex-shrink: 0;
+    pointer-events: none;
+  }
+
+  &_sm {
+    @extend .button;
+    height: $spacing * 8;
+    @include padding(3, "x");
+    @include gap(1.5);
+
+    &:has(>svg) {
+      @include padding(2.5, "x");
+    }
+  }
+
+  &_md {
+    @extend .button;
+    height: $spacing * 9;
+    @include padding(4, "x");
+    @include padding(2, "y");
+    @include gap(1.5);
+
+    &:has(>svg) {
+      @include padding(2.5, "x");
+    }
+  }
+
+  &_lg {
+    @extend .button;
+    height: $spacing * 10;
+    @include padding(6, "x");
+
+    &:has(>svg) {
+      @include padding(4, "x");
+    }
+  }
+
+  &_icon {
+    @extend .button;
+    height: $spacing * 9;
+    width: $spacing * 9
+  }
+}
+
 button {
-  border: 1px solid $color-black;
+  @extend .button_md;
 }
