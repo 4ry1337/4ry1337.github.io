@@ -9,16 +9,9 @@
   @include gap(2);
   @include border-raduis(1.5);
   outline: none;
-  box-shadow: $shadow-xs;
   flex-shrink: 0;
   white-space: nowrap;
-  background-color: $primary;
-  color: $primary-foreground;
   transition: all;
-
-  &:hover {
-    background-color: color.change($primary, $alpha: 0.9)
-  }
 
   &:disabled {
     pointer-events: none;
@@ -78,6 +71,75 @@
     @extend .button;
     height: $spacing * 9;
     width: $spacing * 9
+  }
+
+  &.primary {
+    background-color: $primary;
+    color: $primary-foreground;
+    box-shadow: $shadow-xs;
+
+    &:hover {
+      background-color: color.change($primary, $alpha: 0.9)
+    }
+  }
+
+  &.secondary {
+    background-color: $secondary ;
+    color: $secondary-foreground;
+    box-shadow: $shadow-xs;
+
+    &:hover {
+      background-color: color.change($secondary, $alpha: 0.8)
+    }
+  }
+
+  &.ghost {
+    &:hover {
+      background-color: $accent;
+      color: $accent-foreground;
+    }
+
+    /* ghost: "dark:hover:bg-accent/50", */
+  }
+
+  &.error {
+    background-color: $error;
+    color: $color-white;
+    box-shadow: $shadow-xs;
+
+    &:hover {
+      background-color: color.change($error, $alpha: 0.9)
+    }
+
+    &:focus-visible {
+      @include ring($color: color.change($error, $alpha: 0.2))
+    }
+
+    /* "dark:focus-visible:ring-destructive/40 dark:bg-destructive/60", */
+  }
+
+  &.outline {
+    border-width: 1px;
+    background-color: $background;
+    box-shadow: $shadow-xs;
+
+    &:hover {
+      background-color: $accent;
+      color: $accent-foreground;
+    }
+
+    /* dark:bg-input/30 dark:border-input dark:hover:bg-input/50 */
+  }
+}
+
+a {
+  &.button {
+    color: $primary;
+
+    &:hover {
+      text-decoration: underline;
+      text-underline-offset: 4px;
+    }
   }
 }
 
