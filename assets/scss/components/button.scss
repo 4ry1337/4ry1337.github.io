@@ -2,16 +2,17 @@
 @use "../variables/index.scss" as *;
 @use "../utilities/index.scss" as *;
 
-.button {
+// Base button styles
+%button-base {
   display: inline-flex;
   justify-content: center;
   align-items: center;
   @include gap(2);
-  @include border-raduis(1.5);
+  @include border-radius(1.5);
   outline: none;
   flex-shrink: 0;
   white-space: nowrap;
-  transition: all;
+  transition: all 0.2s ease;
 
   &:disabled {
     pointer-events: none;
@@ -20,11 +21,7 @@
 
   &:focus-visible {
     border: 1px solid $ring;
-    @include ring(3px, color.change($ring, $alpha: 0.5))
-  }
-
-  &:has(>svg) {
-    @include padding(3, "x");
+    @include ring(3px, color.change($ring, $alpha: 0.5));
   }
 
   svg {
@@ -33,116 +30,154 @@
     flex-shrink: 0;
     pointer-events: none;
   }
+}
 
-  &_sm {
-    @extend .button;
-    height: $spacing * 8;
-    @include padding(3, "x");
-    @include gap(1.5);
+// Size variants
+%button-sm {
+  height: $spacing * 8;
+  @include padding(3, "x");
+  @include gap(1.5);
 
-    &:has(>svg) {
-      @include padding(2.5, "x");
-    }
+  &:has(> svg) {
+    @include padding(2.5, "x");
   }
+}
 
-  &_md {
-    @extend .button;
-    height: $spacing * 9;
+%button-md {
+  height: $spacing * 9;
+  @include padding(4, "x");
+  @include padding(2, "y");
+  @include gap(1.5);
+
+  &:has(> svg) {
+    @include padding(2.5, "x");
+  }
+}
+
+%button-lg {
+  height: $spacing * 10;
+  @include padding(6, "x");
+
+  &:has(> svg) {
     @include padding(4, "x");
-    @include padding(2, "y");
-    @include gap(1.5);
+  }
+}
 
-    &:has(>svg) {
-      @include padding(2.5, "x");
-    }
+%button-icon {
+  height: $spacing * 9;
+  width: $spacing * 9;
+  @include padding(0);
+}
+
+// Color variants
+%button-primary {
+  background-color: $primary;
+  color: $primary-foreground;
+  box-shadow: $shadow-xs;
+
+  &:hover:not(:disabled) {
+    background-color: color.change($primary, $alpha: 0.9);
+  }
+}
+
+%button-secondary {
+  background-color: $secondary;
+  color: $secondary-foreground;
+  box-shadow: $shadow-xs;
+
+  &:hover:not(:disabled) {
+    background-color: color.change($secondary, $alpha: 0.8);
+  }
+}
+
+%button-ghost {
+  background-color: transparent;
+
+  &:hover:not(:disabled) {
+    background-color: $accent;
+    color: $accent-foreground;
+  }
+}
+
+%button-error {
+  background-color: $error;
+  color: $color-white;
+  box-shadow: $shadow-xs;
+
+  &:hover:not(:disabled) {
+    background-color: color.change($error, $alpha: 0.9);
   }
 
-  &_lg {
-    @extend .button;
-    height: $spacing * 10;
-    @include padding(6, "x");
+  &:focus-visible {
+    @include ring(3px, color.change($error, $alpha: 0.2));
+  }
+}
 
-    &:has(>svg) {
-      @include padding(4, "x");
-    }
+%button-outline {
+  border: 1px solid $border;
+  background-color: $background;
+  box-shadow: $shadow-xs;
+
+  &:hover:not(:disabled) {
+    background-color: $accent;
+    color: $accent-foreground;
+  }
+}
+
+// Button class combining base with variants
+.button {
+  @extend %button-base;
+
+  &.sm {
+    @extend %button-sm;
   }
 
-  &_icon {
-    @extend .button;
-    height: $spacing * 9;
-    width: $spacing * 9
+  &.md {
+    @extend %button-md;
+  }
+
+  &.lg {
+    @extend %button-lg;
+  }
+
+  &.icon {
+    @extend %button-icon;
   }
 
   &.primary {
-    background-color: $primary;
-    color: $primary-foreground;
-    box-shadow: $shadow-xs;
-
-    &:hover {
-      background-color: color.change($primary, $alpha: 0.9)
-    }
+    @extend %button-primary;
   }
 
   &.secondary {
-    background-color: $secondary ;
-    color: $secondary-foreground;
-    box-shadow: $shadow-xs;
-
-    &:hover {
-      background-color: color.change($secondary, $alpha: 0.8)
-    }
+    @extend %button-secondary;
   }
 
   &.ghost {
-    &:hover {
-      background-color: $accent;
-      color: $accent-foreground;
-    }
-
-    /* ghost: "dark:hover:bg-accent/50", */
+    @extend %button-ghost;
   }
 
   &.error {
-    background-color: $error;
-    color: $color-white;
-    box-shadow: $shadow-xs;
-
-    &:hover {
-      background-color: color.change($error, $alpha: 0.9)
-    }
-
-    &:focus-visible {
-      @include ring($color: color.change($error, $alpha: 0.2))
-    }
-
-    /* "dark:focus-visible:ring-destructive/40 dark:bg-destructive/60", */
+    @extend %button-error;
   }
 
   &.outline {
-    border-width: 1px;
-    background-color: $background;
-    box-shadow: $shadow-xs;
-
-    &:hover {
-      background-color: $accent;
-      color: $accent-foreground;
-    }
-
-    /* dark:bg-input/30 dark:border-input dark:hover:bg-input/50 */
+    @extend %button-outline;
   }
 }
 
-a {
-  &.button {
-    color: $primary;
+// Link button variant
+a.button {
+  color: $primary;
+  text-decoration: none;
 
-    &:hover {
-      text-decoration: underline;
-      text-underline-offset: 4px;
-    }
+  &:hover:not(:disabled) {
+    text-decoration: underline;
+    text-underline-offset: 4px;
   }
 }
 
+// Default button element styles
 button {
-  @extend .button_md;
+  @extend .button;
+  @extend %button-md;
 }
