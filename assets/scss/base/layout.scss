@@ -2,8 +2,8 @@
 @use '../utilities/index.scss' as *;
 
 body {
-  color: var(--foreground);
-  background-color: var(--background);
+  color: $foreground;
+  background-color: $background;
 }
 
 header {
