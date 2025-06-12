@@ -20,8 +20,8 @@
   }
 
   &:focus-visible {
-    border: 1px solid $ring;
-    @include ring(3px, color.change($ring, $alpha: 0.5));
+    border: 1px solid var(--ring);
+    @include ring(3px, rgba(var(--ring), 0.5));
   }
 
   svg {
@@ -71,22 +71,22 @@
 
 // Color variants
 %button-primary {
-  background-color: $primary;
-  color: $primary-foreground;
+  background-color: var(--primary);
+  color: var(--primary-foreground);
   box-shadow: $shadow-xs;
 
   &:hover:not(:disabled) {
-    background-color: color.change($primary, $alpha: 0.9);
+    background-color: rgba(var(--primary), 0.9);
   }
 }
 
 %button-secondary {
-  background-color: $secondary;
-  color: $secondary-foreground;
+  background-color: var(--secondary);
+  color: var(--secondary-foreground);
   box-shadow: $shadow-xs;
 
   &:hover:not(:disabled) {
-    background-color: color.change($secondary, $alpha: 0.8);
+    background-color: rgba(var(--secondary), 0.8);
   }
 }
 
@@ -94,33 +94,33 @@
   background-color: transparent;
 
   &:hover:not(:disabled) {
-    background-color: $accent;
-    color: $accent-foreground;
+    background-color: var(--accent);
+    color: var(--accent-foreground);
   }
 }
 
 %button-error {
-  background-color: $error;
+  background-color: var(--error);
   color: $color-white;
   box-shadow: $shadow-xs;
 
   &:hover:not(:disabled) {
-    background-color: color.change($error, $alpha: 0.9);
+    background-color: rgba(var(--error), 0.9);
   }
 
   &:focus-visible {
-    @include ring(3px, color.change($error, $alpha: 0.2));
+    @include ring(3px, rgba(var(--error), 0.2));
   }
 }
 
 %button-outline {
-  border: 1px solid $border;
-  background-color: $background;
+  border: 1px solid var(--border);
+  background-color: var(--background);
   box-shadow: $shadow-xs;
 
   &:hover:not(:disabled) {
-    background-color: $accent;
-    color: $accent-foreground;
+    background-color: var(--accent);
+    color: var(--accent-foreground);
   }
 }
 
@@ -167,7 +167,7 @@
 
 // Link button variant
 a.button {
-  color: $primary;
+  color: var(--primary);
   text-decoration: none;
 
   &:hover:not(:disabled) {
