@@ -12,41 +12,39 @@ ol.breadcrumb-list {
   @include sm {
     @include gap(2.5);
   }
-}
 
-li.breadcrumb-item {
-  display: inline-flex;
-  align-items: center;
-  @include gap(1.5);
-}
-
-a.breadcrumb-link {
-  transition: all;
-
-  &:hover {
-    color: var(--foreground)
+  li.breadcrumb-item {
+    display: inline-flex;
+    align-items: center;
+    @include gap(1.5);
   }
-}
 
+  a.breadcrumb-link {
+    transition: all;
 
-
-li.breadcrumb-separator {
-  /* role="presentation" */
-  /* aria-hidden="true" */
-  /* children ?? <ChevronRight /> */
-
-  svg {
-    @include size(3.5);
+    &:hover {
+      color: var(--foreground)
+    }
   }
-}
 
-span.breadcrumb-ellipsis {
-  display: flex;
-  @include size(9);
-  align-items: center;
-  justify-content: center;
+  li.breadcrumb-separator {
+    /* role="presentation" */
+    /* aria-hidden="true" */
+    /* children ?? <ChevronRight /> */
 
-  svg {
-    @include size(4);
+    svg {
+      @include size(3.5);
+    }
+  }
+
+  span.breadcrumb-ellipsis {
+    display: flex;
+    @include size(9);
+    align-items: center;
+    justify-content: center;
+
+    svg {
+      @include size(4);
+    }
   }
 }
