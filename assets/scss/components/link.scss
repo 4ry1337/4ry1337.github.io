@@ -1,0 +1,14 @@
+@use "sass:color";
+@use "../variables/index.scss" as *;
+@use "../utilities/index.scss" as *;
+
+// Link button variant
+a.button {
+  color: var(--primary);
+  text-decoration: none;
+
+  &:hover:not(:disabled) {
+    text-decoration: underline;
+    text-underline-offset: 4px;
+  }
+}
