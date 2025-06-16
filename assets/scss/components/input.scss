@@ -1,3 +1,6 @@
+@use "../variables/index.scss" as *;
+@use "../utilities/index.scss" as *;
+
 input {
   &::file {
     color: var(--foreground);
@@ -50,7 +53,46 @@ input {
     @include ring(3px, rgba(var(--ring), 0.5))
   }
 
-  /* &:area-invalid { */
-  /* } */
-  /* "aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive" */
+  &:area-invalid {
+    border-color: var(--error);
+    @include ring(2px, rgba(var(--error), 0.2));
+  }
+
+  /* dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive" */
+}
+
+textarea {
+  display: flex;
+  field-sizing: content;
+  min-height: var(--spacing) * 16;
+  width: 100%;
+  @include border-radius(1.5);
+  border: 1px solid var(--input);
+  @include padding(3, "x");
+  @include padding(2, "y");
+  box-shadow: $shadow-xs;
+  background-color: transparent;
+  transition: all;
+  outline: none;
+
+  &::placeholder {
+    color: var(--muted-foreground);
+  }
+
+  &:focus-visible {
+    border-color: var(--ring);
+    @include ring(3px, rgba(var(--ring), 0.5));
+  }
+
+  &:aria-invalid {
+    border-color: var(--error);
+    @include ring(2px, rgba(var(--error), 0.2));
+  }
+
+  &:disabled {
+    cursor: not-allowed;
+    opacity: 0.5;
+  }
+
+  /* dark:aria-invalid:ring-destructive/40 dark:bg-input/30 text-base md:text-sm", */
 }
