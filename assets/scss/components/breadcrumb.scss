@@ -33,18 +33,21 @@ ol.breadcrumb-list {
     /* children ?? <ChevronRight /> */
 
     svg {
-      @include size(3.5);
+      height: $spacing * 3.5;
+      width: $spacing * 3.5;
     }
   }
 
   span.breadcrumb-ellipsis {
     display: flex;
-    @include size(9);
+    height: $spacing * 9;
+    width: $spacing * 9;
     align-items: center;
     justify-content: center;
 
     svg {
-      @include size(4);
+      height: $spacing * 4;
+      width: $spacing * 4;
     }
   }
 }

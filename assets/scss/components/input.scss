@@ -2,9 +2,8 @@
 @use "../utilities/index.scss" as *;
 
 input {
-
   display: flex;
-  height: var(--spacing) * 9;
+  height: $spacing * 9;
   width: 100%;
   min-width: 0px;
   @include border-radius(1.5);
@@ -29,7 +28,7 @@ input {
   }
 
   &:focus-visible {
-    border: 1px solid $ring;
+    border: 1px solid var(--ring);
     @include ring(3px, rgba(var(--ring), 0.5))
   }
 
@@ -41,7 +40,7 @@ input {
   &::file {
     color: var(--foreground);
     display: inline-flex;
-    height: var(--spacing) * 7;
+    height: $spacing * 7;
     border-width: 0px;
     background-color: transparent;
     @include fluid-size(4, 4);
@@ -59,7 +58,7 @@ input {
 textarea {
   display: flex;
   field-sizing: content;
-  min-height: var(--spacing) * 16;
+  min-height: $spacing * 16;
   width: 100%;
   @include border-radius(1.5);
   border: 1px solid var(--input);

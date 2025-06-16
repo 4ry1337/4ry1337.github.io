@@ -1,3 +1,6 @@
+@use "../variables/index.scss" as *;
+@use "../utilities/index.scss" as *;
+
 label {
   line-height: 100%;
   letter-spacing: 0.05rem;

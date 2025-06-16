@@ -2,8 +2,7 @@
 @use "../variables/index.scss" as *;
 @use "../utilities/index.scss" as *;
 
-// Base button styles
-%button-base {
+.button {
   display: inline-flex;
   justify-content: center;
   align-items: center;
@@ -12,6 +11,9 @@
   outline: none;
   flex-shrink: 0;
   white-space: nowrap;
+  line-height: 100%;
+  letter-spacing: 0.05rem;
+  font-weight: $font-weight-semibold;
   transition: all 0.2s ease;
 
   &:disabled {
@@ -30,20 +32,101 @@
     flex-shrink: 0;
     pointer-events: none;
   }
-}
 
-// Size variants
-%button-sm {
-  height: $spacing * 8;
-  @include padding(3, "x");
-  @include gap(1.5);
+  &.sm {
+    height: $spacing * 8;
+    @include padding(3, "x");
+    @include gap(1.5);
 
-  &:has(> svg) {
-    @include padding(2.5, "x");
+    &:has(> svg) {
+      @include padding(2.5, "x");
+    }
+  }
+
+  &.md {
+    height: $spacing * 9;
+    @include padding(4, "x");
+    @include padding(2, "y");
+    @include gap(1.5);
+
+    &:has(> svg) {
+      @include padding(2.5, "x");
+    }
+  }
+
+  &.lg {
+    height: $spacing * 10;
+    @include padding(6, "x");
+
+    &:has(> svg) {
+      @include padding(4, "x");
+    }
+  }
+
+  &.icon {
+    height: $spacing * 9;
+    width: $spacing * 9;
+    @include padding(0);
+  }
+
+  &.primary {
+    background-color: var(--primary);
+    color: var(--primary-foreground);
+    @include shadow-xs;
+
+    &:hover:not(:disabled) {
+      background-color: oklch(from var(--primary) l c h / 0.9);
+    }
+  }
+
+  &.secondary {
+    background-color: var(--secondary);
+    color: var(--secondary-foreground);
+    @include shadow-xs;
+
+    &:hover:not(:disabled) {
+      background-color: rgba(var(--secondary), 0.8);
+    }
+  }
+
+  &.ghost {
+    background-color: transparent;
+
+    &:hover:not(:disabled) {
+      background-color: var(--accent);
+      color: var(--accent-foreground);
+    }
+  }
+
+  &.error {
+    background-color: var(--error);
+    color: $color-white;
+    @include shadow-xs;
+
+    &:hover:not(:disabled) {
+      background-color: rgba(var(--error), 0.9);
+    }
+
+    &:focus-visible {
+      @include ring(3px, rgba(var(--error), 0.2));
+    }
+  }
+
+  &.outline {
+    border: 1px solid var(--border);
+    background-color: var(--background);
+    @include shadow-xs;
+
+    &:hover:not(:disabled) {
+      background-color: var(--accent);
+      color: var(--accent-foreground);
+    }
   }
 }
 
-%button-md {
+button {
+  @extend .button;
+
   height: $spacing * 9;
   @include padding(4, "x");
   @include padding(2, "y");
@@ -52,124 +135,4 @@
   &:has(> svg) {
     @include padding(2.5, "x");
   }
-}
-
-%button-lg {
-  height: $spacing * 10;
-  @include padding(6, "x");
-
-  &:has(> svg) {
-    @include padding(4, "x");
-  }
-}
-
-%button-icon {
-  height: $spacing * 9;
-  width: $spacing * 9;
-  @include padding(0);
-}
-
-// Color variants
-%button-primary {
-  background-color: var(--primary);
-  color: var(--primary-foreground);
-  @include shadow-xs;
-
-  &:hover:not(:disabled) {
-    background-color: rgba(var(--primary), 0.9);
-  }
-}
-
-%button-secondary {
-  background-color: var(--secondary);
-  color: var(--secondary-foreground);
-  @include shadow-xs;
-
-  &:hover:not(:disabled) {
-    background-color: rgba(var(--secondary), 0.8);
-  }
-}
-
-%button-ghost {
-  background-color: transparent;
-
-  &:hover:not(:disabled) {
-    background-color: var(--accent);
-    color: var(--accent-foreground);
-  }
-}
-
-%button-error {
-  background-color: var(--error);
-  color: $color-white;
-  @include shadow-xs;
-
-  &:hover:not(:disabled) {
-    background-color: rgba(var(--error), 0.9);
-  }
-
-  &:focus-visible {
-    @include ring(3px, rgba(var(--error), 0.2));
-  }
-}
-
-%button-outline {
-  border: 1px solid var(--border);
-  background-color: var(--background);
-  @include shadow-xs;
-
-  &:hover:not(:disabled) {
-    background-color: var(--accent);
-    color: var(--accent-foreground);
-  }
-}
-
-// Button class combining base with variants
-.button {
-  @extend %button-base;
-
-  &.sm {
-    @extend %button-sm;
-  }
-
-  &.md {
-    @extend %button-md;
-  }
-
-  &.lg {
-    @extend %button-lg;
-  }
-
-  &.icon {
-    @extend %button-icon;
-  }
-
-  &.primary {
-    @extend %button-primary;
-  }
-
-  &.secondary {
-    @extend %button-secondary;
-  }
-
-  &.ghost {
-    @extend %button-ghost;
-  }
-
-  &.error {
-    @extend %button-error;
-  }
-
-  &.outline {
-    @extend %button-outline;
-  }
-}
-
-// Default button element styles
-button {
-  @extend .button;
-  @extend %button-md;
-  line-height: 100%;
-  letter-spacing: 0.05rem;
-  font-weight: $font-weight-semibold;
 }
