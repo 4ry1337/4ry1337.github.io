@@ -23,7 +23,7 @@
 
   &:focus-visible {
     border: 1px solid var(--ring);
-    @include ring(3px, rgba(var(--ring), 0.5));
+    @include ring(3px, oklch(from var(--ring) l c h / 0.5));
   }
 
   svg {
@@ -85,7 +85,7 @@
     @include shadow-xs;
 
     &:hover:not(:disabled) {
-      background-color: rgba(var(--secondary), 0.8);
+      background-color: oklch(from var(--secondary) l c h / 0.8);
     }
   }
 
@@ -104,11 +104,18 @@
     @include shadow-xs;
 
     &:hover:not(:disabled) {
-      background-color: rgba(var(--error), 0.9);
+      background-color: oklch(from var(--error) l c h / 0.9);
     }
 
     &:focus-visible {
-      @include ring(3px, rgba(var(--error), 0.2));
+      @include ring(3px, oklch(from var(--error) l c h / 0.2));
+    }
+
+    @at-root .dark & {
+      &:focus-visible {
+        background-color: oklch(from var(--error) l c h / 0.9);
+        @include ring(3px, oklch(from var(--error) l c h / 0.4));
+      }
     }
   }
 
@@ -126,13 +133,5 @@
 
 button {
   @extend .button;
-
-  height: $spacing * 9;
-  @include padding(4, "x");
-  @include padding(2, "y");
-  @include gap(1.5);
-
-  &:has(> svg) {
-    @include padding(2.5, "x");
-  }
+  @extend .md;
 }

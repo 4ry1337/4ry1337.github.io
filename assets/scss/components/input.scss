@@ -29,12 +29,12 @@ input {
 
   &:focus-visible {
     border: 1px solid var(--ring);
-    @include ring(3px, rgba(var(--ring), 0.5))
+    @include ring(3px, oklch(from var(--ring) l c h / 0.5));
   }
 
   &:area-invalid {
     border-color: var(--error);
-    @include ring(2px, rgba(var(--error), 0.2));
+    @include ring(2px, oklch(from var(--error) l c h / 0.2));
   }
 
   &::file {
@@ -75,12 +75,12 @@ textarea {
 
   &:focus-visible {
     border-color: var(--ring);
-    @include ring(3px, rgba(var(--ring), 0.5));
+    @include ring(3px, oklch(from var(--ring) l c h / 0.5));
   }
 
   &:aria-invalid {
     border-color: var(--error);
-    @include ring(2px, rgba(var(--error), 0.2));
+    @include ring(2px, oklch(from var(--error) l c h / 0.2));
   }
 
   &:disabled {
