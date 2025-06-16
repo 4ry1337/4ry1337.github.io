@@ -2,6 +2,42 @@
 @use "../utilities/index.scss" as *;
 
 input {
+
+  display: flex;
+  height: var(--spacing) * 9;
+  width: 100%;
+  min-width: 0px;
+  @include border-radius(1.5);
+  @include padding(3, "x");
+  @include padding(1, "y");
+  border-width: 1px;
+  @include shadow-xs;
+  background-color: transparent;
+  outline: none;
+  transition: all;
+
+  /* dark:bg-input/30 text-base */
+
+  &::placeholder {
+    color: var(--muted-foreground);
+  }
+
+  :disabled {
+    pointer-events: none;
+    cursor: not-allowed;
+    opacity: 0.5;
+  }
+
+  &:focus-visible {
+    border: 1px solid $ring;
+    @include ring(3px, rgba(var(--ring), 0.5))
+  }
+
+  &:area-invalid {
+    border-color: var(--error);
+    @include ring(2px, rgba(var(--error), 0.2));
+  }
+
   &::file {
     color: var(--foreground);
     display: inline-flex;
@@ -12,50 +48,9 @@ input {
     font-weight: $font-weight-medium
   }
 
-  &::placeholder {
-    color: var(--muted-foreground);
-  }
-
   &::selection {
     color: var(--primary-foreground);
     background-color: var(--primary);
-  }
-
-  display: flex;
-  height: var(--spacing) * 9;
-  width: 100%;
-  min-width: 0px;
-  @include border-radius(1.5);
-  @include padding(3, "x");
-  @include padding(1, "y");
-  border-width: 1px;
-  box-shadow: $shadow-xs;
-  background-color: transparent;
-  outline: none;
-
-  :disabled {
-    pointer-events: none;
-    cursor: not-allowed;
-    opacity: 0.5;
-  }
-
-
-  @include md {
-    @include fluid-size(4, 4);
-  }
-
-  transition: all;
-
-  /* dark:bg-input/30 text-base */
-
-  &:focus-visible {
-    border: 1px solid $ring;
-    @include ring(3px, rgba(var(--ring), 0.5))
-  }
-
-  &:area-invalid {
-    border-color: var(--error);
-    @include ring(2px, rgba(var(--error), 0.2));
   }
 
   /* dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive" */
@@ -70,7 +65,7 @@ textarea {
   border: 1px solid var(--input);
   @include padding(3, "x");
   @include padding(2, "y");
-  box-shadow: $shadow-xs;
+  @include shadow-xs;
   background-color: transparent;
   transition: all;
   outline: none;
