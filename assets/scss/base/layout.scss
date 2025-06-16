@@ -6,16 +6,19 @@ body {
   background-color: var(--background);
 }
 
-header {
-  position: sticky;
+.topbar-container {
+  position: fixed;
+  right: 0;
+  left: 0;
 }
 
 .topbar {
-  display: none;
-
-  @include sm {
-    display: inherit;
-  }
+  display: flex;
+  flex-wrap: nowrap;
+  flex-direction: row;
+  background-color: transparent;
+  @include gap(2);
+  @include padding(3);
 }
 
 .bottombar {
