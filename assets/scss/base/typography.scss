@@ -2,7 +2,6 @@
 @use '../utilities/index.scss' as *;
 
 /* font family */
-
 html,
 :host {
   font-family: $font-family;
@@ -66,10 +65,6 @@ p {
   line-height: 150%;
 }
 
-label {
-  line-height: 100%;
-}
-
 /* letter spacing */
 
 h1,
@@ -80,10 +75,6 @@ h5,
 h6 {
   /* @include margin(y, 2); */
   letter-spacing: -0.02rem;
-}
-
-label {
-  letter-spacing: 0.05rem;
 }
 
 /* font weights */
@@ -105,8 +96,4 @@ h6 {
 
 p {
   font-weight: $font-weight-normal
-}
-
-label {
-  font-weight: $font-weight-semibold
 }

@@ -1,0 +1,56 @@
+input {
+  &::file {
+    color: var(--foreground);
+    display: inline-flex;
+    height: var(--spacing) * 7;
+    border-width: 0px;
+    background-color: transparent;
+    @include fluid-size(4, 4);
+    font-weight: $font-weight-medium
+  }
+
+  &::placeholder {
+    color: var(--muted-foreground);
+  }
+
+  &::selection {
+    color: var(--primary-foreground);
+    background-color: var(--primary);
+  }
+
+  display: flex;
+  height: var(--spacing) * 9;
+  width: 100%;
+  min-width: 0px;
+  @include border-radius(1.5);
+  @include padding(3, "x");
+  @include padding(1, "y");
+  border-width: 1px;
+  box-shadow: $shadow-xs;
+  background-color: transparent;
+  outline: none;
+
+  :disabled {
+    pointer-events: none;
+    cursor: not-allowed;
+    opacity: 0.5;
+  }
+
+
+  @include md {
+    @include fluid-size(4, 4);
+  }
+
+  transition: all;
+
+  /* dark:bg-input/30 text-base */
+
+  &:focus-visible {
+    border: 1px solid $ring;
+    @include ring(3px, rgba(var(--ring), 0.5))
+  }
+
+  /* &:area-invalid { */
+  /* } */
+  /* "aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive" */
+}
