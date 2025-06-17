@@ -25,4 +25,4 @@ serde-aux = "4.7.0"
 serde_yaml = "0.9.34"
 
 # Time
-# chrono = { version = "0.4.41", default-features = false, features = ["clock"] }
+chrono = { version = "0.4.41", features = ["serde"] }

@@ -13,7 +13,7 @@
   </head>
   <body >
     {% include "widgets/topbar.html" %}
-    <div class="container scrollable">
+    <div class="container">
       <main>
         {% block content %}{% endblock content %}
       </main>
@@ -24,6 +24,5 @@
     <footer class="container">
         {% include "widgets/footer.html" %}
     </footer>
-    {% include "widgets/bottombar.html" %}
   </body>
 </html>

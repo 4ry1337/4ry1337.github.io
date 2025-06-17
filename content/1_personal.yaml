@@ -2,8 +2,9 @@ name: Rakhat Yskak
 firstname: Rakhat
 lastname: Yskak
 email: "yskak.rakhat@gmail.com"
-phone: "+7 747 506 71 01"
-location: "Astana, Kazakhstan"
+address:
+  street: null
+  city: Astana
+  country: Kazakhstan
 citizenship: "Kazakhstan"
 summary: "Motivated software engineer with hands-on experience in software development with 6+ months of industry experience and 4+ years in Computer Science and a background in Mathematics."
-relocate: true
