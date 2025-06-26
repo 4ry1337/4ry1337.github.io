@@ -5,7 +5,7 @@ use std::path::Path;
 use askama::{DynTemplate, Template};
 
 use crate::config::Settings;
-use crate::error::Error;
+use crate::error::SsgError;
 
 pub mod about;
 pub mod home;
@@ -23,7 +23,7 @@ impl Routes {
         }
     }
 
-    pub fn build(&self) -> Result<(), Error> {
+    pub fn build(&self) -> Result<(), SsgError> {
         for (path, template) in &self.routes {
             let output_path = Path::new(&format!("{}{}", self.output, path)).join("index.html");
             if let Some(parent) = output_path.parent() {
