@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" data-theme="light">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -25,7 +25,12 @@
     <!-- </footer> -->
   <script>
     document.addEventListener("DOMContentLoaded", function () {
-      const currentPath = window.location.pathname;
+      let currentPath = window.location.pathname;
+
+      if (currentPath.toLowerCase().endsWith(".html")) {
+        currentPath = currentPath.slice(0, -5);
+      }
+
       const links = document.querySelectorAll(".navbar a");
 
       links.forEach((link) => {
@@ -37,6 +42,28 @@
         }
       });
     });
+  </script>
+  <script>
+    const button = document.querySelector("[data-toggle-theme]");
+    const storage = localStorage.getItem("theme");
+    const system = window.matchMedia("(prefers-color-scheme: dark)");
+    let current = storage !== null ? storage : system.matches  ? "dark" : "light";
+
+    const setTheme = (theme) => {
+      document.getElementById("light").style.display = theme === "dark" ? "inline" : "none";
+      document.getElementById("dark").style.display = theme === "dark" ? "none" : "inline";
+      document.documentElement.setAttribute("data-theme", theme);
+      localStorage.setItem("theme", theme);
+      current = theme;
+      button.setAttribute("aria-label", theme === "dark" ? "Change to light theme" : "Change to dark theme");
+    };
+
+    button.addEventListener("click", () => {
+      console.log("theme changed");
+      setTheme(current === "dark" ? "light" : "dark")
+    });
+
+    document.addEventListener("DOMContentLoaded", setTheme(current));
   </script>
   </body>
 </html>

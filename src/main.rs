@@ -8,8 +8,8 @@ fn main() -> Result<(), SsgError> {
     let config = get_config().expect("Failed to read configuration.");
 
     let routes = Routes::new(config)
-        .route("/index", home())
-        .route("/about", about());
+        .route("index", home())
+        .route("about", about());
     // let personal = Personal::from_file("content/1_personal.yaml")?;
     // let educations: Vec<Edcucation> = FromYaml::from_file("content/2_education.yaml")?;
     // let experences: Vec<Experience> = FromYaml::from_file("content/3_experience.yaml")?;
