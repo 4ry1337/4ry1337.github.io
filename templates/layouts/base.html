@@ -23,31 +23,20 @@
     <!-- <footer class="container"> -->
     <!--     {% include "widgets/footer.html" %} -->
     <!-- </footer> -->
-    <script>
-      document.addEventListener("DOMContentLoaded", function () {
-        //const baseUrl = "/dist";
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const currentPath = window.location.pathname;
+      const links = document.querySelectorAll(".navbar a");
 
-        //const normalize = (path) => {
-        //  // Remove baseUrl prefix if present
-        //  if (baseUrl !== "/" && path.startsWith(baseUrl)) {
-        //    path = path.slice(baseUrl.length);
-        //  }
-        //  // Remove trailing slash except for root
-        //  return path !== "/" ? path.replace(/\/+$/, "") : "/";
-        //};
-
-        const currentPath = normalize(window.location.pathname);
-        const links = document.querySelectorAll(".navbar a");
-
-        links.forEach((link) => {
-          const linkPath = normalize(new URL(link.href).pathname);
-          if (linkPath === currentPath) {
-            link.classList.add("active");
-          } else {
-            link.classList.remove("active");
-          }
-        });
+      links.forEach((link) => {
+        const linkPath = new URL(link.href).pathname;
+        if (linkPath === currentPath) {
+          link.classList.add("active");
+        } else {
+          link.classList.remove("active");
+        }
       });
-    </script>
+    });
+  </script>
   </body>
 </html>
