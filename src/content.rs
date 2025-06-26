@@ -3,12 +3,14 @@ use std::fs;
 use chrono::NaiveDate;
 use serde::{Deserialize, Serialize};
 
+use crate::error::SsgError;
+
 pub trait FromYaml: for<'de> Deserialize<'de> + Sized {
-    fn from_str(yaml: &str) -> Result<Self, serde_yaml::Error> {
-        serde_yaml::from_str(yaml)
+    fn from_str(yaml: &str) -> Result<Self, SsgError> {
+        Ok(serde_yaml::from_str(yaml)?)
     }
 
-    fn from_file(path: &str) -> Result<Self, Box<dyn std::error::Error>> {
+    fn from_file(path: &str) -> Result<Self, SsgError> {
         let contents = fs::read_to_string(path)?;
         Ok(serde_yaml::from_str(&contents)?)
     }
