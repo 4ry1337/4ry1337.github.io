@@ -20,6 +20,7 @@ body {
 }
 
 .navbar {
+  z-index: 2;
   display: inline-flex;
   flex-wrap: nowrap;
   flex-direction: row;

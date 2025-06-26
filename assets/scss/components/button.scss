@@ -22,7 +22,7 @@
   }
 
   &:focus-visible {
-    border: 1px solid var(--ring);
+    border-color: var(--ring);
     @include ring(3px, oklch(from var(--ring) l c h / 0.5));
   }
 
