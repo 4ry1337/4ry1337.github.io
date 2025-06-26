@@ -1,4 +1,5 @@
 @use '../variables/index.scss' as *;
+@use '../components/index.scss' as *;
 @use '../utilities/index.scss' as *;
 
 body {
@@ -6,25 +7,32 @@ body {
   background-color: var(--background);
 }
 
-.topbar-container {
+.bottombar {
   position: fixed;
   right: 0;
   left: 0;
+  bottom: 0;
+
+  display: flex;
+  justify-content: center;
+  @include padding(4, 'b');
 }
 
-.topbar {
-  display: flex;
+.navbar {
+  display: inline-flex;
   flex-wrap: nowrap;
   flex-direction: row;
   background-color: transparent;
-  @include gap(2);
-  @include padding(3);
-}
+  justify-content: center;
+  @include space(2);
+  @include padding(1);
+  @extend .border-full;
 
-.bottombar {
-  display: block;
+  $blur-value: 10px;
+  backdrop-filter: blur($blur-value);
+  -webkit-backdrop-filter: blur($blur-value);
 
-  @include sm {
-    display: none;
+  &>.active {
+    @extend .primary !optional;
   }
 }
