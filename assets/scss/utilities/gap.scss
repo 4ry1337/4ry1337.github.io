@@ -15,3 +15,21 @@
     gap: $value;
   }
 }
+
+@mixin space($number, $direction: x, $reverse: 0) {
+  $value: $number * $spacing;
+
+  @if $direction ==y {
+    &> :not(:last-child) {
+      margin-block-start: $value * $reverse;
+      margin-block-end: $value * (1 - $reverse);
+    }
+  }
+
+  @else {
+    &> :not(:last-child) {
+      margin-inline-start: $value * $reverse;
+      margin-inline-end: $value * (1 - $reverse);
+    }
+  }
+}
