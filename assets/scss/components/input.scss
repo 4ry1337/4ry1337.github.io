@@ -6,7 +6,7 @@ input {
   height: $spacing * 9;
   width: 100%;
   min-width: 0px;
-  @include border-radius(1.5);
+  @extend .radius-md;
   @include padding(3, "x");
   @include padding(1, "y");
   border-width: 1px;
@@ -60,7 +60,7 @@ textarea {
   field-sizing: content;
   min-height: $spacing * 16;
   width: 100%;
-  @include border-radius(1.5);
+  @extend .radius-md;
   border: 1px solid var(--input);
   @include padding(3, "x");
   @include padding(2, "y");
