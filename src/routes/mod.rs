@@ -25,7 +25,8 @@ impl Routes {
 
     pub fn build(&self) -> Result<(), SsgError> {
         for (path, template) in &self.routes {
-            let output_path = Path::new(&format!("{}{}", self.output, path)).join("index.html");
+            let output_path = format!("{}{}.{}", self.output, path, "html");
+            let output_path = Path::new(&output_path);
             if let Some(parent) = output_path.parent() {
                 fs::create_dir_all(parent)?;
             }
