@@ -44,6 +44,23 @@
   }
 }
 
+
+.radius-sm {
+  border-radius: calc($radius - 4px)
+}
+
+.radius-md {
+  border-radius: calc($radius - 2px)
+}
+
+.radius-lg {
+  border-radius: $radius;
+}
+
+.radius-xl {
+  border-radius: calc($radius + 4px);
+}
+
 @mixin border-full {
   border-radius: calc(infinity * 1px);
 }
