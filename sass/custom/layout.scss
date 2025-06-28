@@ -1,0 +1,46 @@
+@use '../variables/index.scss' as *;
+@use '../components/index.scss' as *;
+@use '../utilities/index.scss' as *;
+
+body {
+  color: var(--foreground);
+  background-color: var(--background);
+  transition: background-color 0.4s ease, color 0.4s ease;
+}
+
+.bottombar {
+  position: fixed;
+  right: 0;
+  left: 0;
+  bottom: 20px;
+
+  display: flex;
+  justify-content: center;
+}
+
+.navbar {
+  z-index: 2;
+  display: inline-flex;
+  flex-wrap: nowrap;
+  flex-direction: row;
+  color: var(--card-foreground);
+  background-color: var(--card);
+  justify-content: center;
+  @include space(2);
+  @include padding(1.5);
+  @include shadow-xl();
+  @include border-full();
+
+  $blur-value: 10px;
+  backdrop-filter: blur($blur-value);
+  -webkit-backdrop-filter: blur($blur-value);
+
+  &>.active {
+    background-color: var(--primary);
+    color: var(--primary-foreground);
+
+    &:hover:not(:disabled) {
+      background-color: oklch(from var(--primary) l c h / 0.9);
+    }
+  }
+}

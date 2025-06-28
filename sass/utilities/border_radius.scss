@@ -1,0 +1,70 @@
+@use "../variables/index.scss" as *;
+
+@mixin border-radius($number, $direction: None) {
+  $value: $number * $spacing;
+
+  @if $direction ==t {
+    border-top-left-radius: $value;
+    border-top-right-radius: $value;
+  }
+
+  @else if $direction ==b {
+    border-bottom-right-radius: $value;
+    border-bottom-left-radius: $value;
+  }
+
+  @else if $direction ==l {
+    border-top-left-radius: $value;
+    border-bottom-left-radius: $value;
+  }
+
+  @else if $direction ==r {
+    border-top-right-radius: $value;
+    border-bottom-right-radius: $value;
+  }
+
+  @else if $direction ==tr {
+    border-top-right-radius: $value;
+  }
+
+  @else if $direction ==tl {
+    border-top-left-radius: $value;
+  }
+
+  @else if $direction ==br {
+    border-bottom-right-radius: $value;
+  }
+
+  @else if $direction ==bl {
+    border-bottom-left-radius: $value;
+  }
+
+  @else {
+    border-radius: $value;
+  }
+}
+
+
+.radius-sm {
+  border-radius: calc($radius - 4px)
+}
+
+.radius-md {
+  border-radius: calc($radius - 2px)
+}
+
+.radius-lg {
+  border-radius: $radius;
+}
+
+.radius-xl {
+  border-radius: calc($radius + 4px);
+}
+
+@mixin border-full {
+  border-radius: 9999px;
+}
+
+.border-full {
+  @include border-full();
+}

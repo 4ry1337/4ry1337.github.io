@@ -1,0 +1,15 @@
+@use '../variables/index.scss' as *;
+@use '../components/index.scss' as *;
+@use '../utilities/index.scss' as *;
+
+.hero {
+  @include padding(50, "t");
+}
+
+.hero_title {
+  display: flex;
+  white-space: nowrap;
+  justify-content: center;
+}
+
+.hero_description {}

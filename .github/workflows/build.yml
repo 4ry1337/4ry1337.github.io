@@ -33,20 +33,29 @@ jobs:
     steps:
       - name: Check out the repository code
         uses: actions/checkout@v4
-      - name: Install the Rust toolchain
-        uses: actions-rust-lang/setup-rust-toolchain@v1
-      - name: Build the Rust project in release mode
-        run: cargo build --release
-      - name: Generate Static Site
-        run: |
-          ./target/release/ary1337
-          cp -r static dist/
-      - name: Setup Pages
-        uses: actions/configure-pages@v5
-      - name: Upload artifact
-        uses: actions/upload-pages-artifact@v3
-        with:
-          path: './dist'
-      - name: Deploy to GitHub Pages
-        id: deployment
-        uses: actions/deploy-pages@v4
+      - name: build_and_deploy
+        uses: shalzz/zola-deploy-action@master
+        env:
+          # Target branch
+          PAGES_BRANCH: gh-pages
+          # Provide personal access token
+          # TOKEN: ${{ secrets.TOKEN }}
+          # Or if publishing to the same repo, use the automatic token
+          TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      # - name: Install the Rust toolchain
+      #   uses: actions-rust-lang/setup-rust-toolchain@v1
+      # - name: Build the Rust project in release mode
+      #   run: cargo build --release
+      # - name: Generate Static Site
+      #   run: |
+      #     ./target/release/ary1337
+      #     cp -r static dist/
+      # - name: Setup Pages
+      #   uses: actions/configure-pages@v5
+      # - name: Upload artifact
+      #   uses: actions/upload-pages-artifact@v3
+      #   with:
+      #     path: './dist'
+      # - name: Deploy to GitHub Pages
+      #   id: deployment
+      #   uses: actions/deploy-pages@v4

@@ -5,17 +5,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="google" content="notranslate" />
     <meta http-equiv="Content-Language" content="en_US" />
-    <title>{{ title }}</title>
-    <meta name="description" content="{{description}}" />
-    <link rel="stylesheet" href="/assets/fonts/IosevkaWeb/IosevkaWeb.css" />
-    <link rel="stylesheet" href="/assets/style/normalize.css" />
-    <link rel="stylesheet" href="/assets/style/index.min.css" />
+    <meta name="author" content="{{ config.author }}">
+    <meta name="description" content="{% block description %}{{ config.description }}{% endblock description %}">
+    <title>{% block title %}{{ config.title }}{% endblock title %}</title>
+    <link rel="stylesheet" href="{{ get_url(path='fonts/IosevkaWeb/IosevkaWeb.css') }}" />
+    <link rel="stylesheet" href="{{ get_url(path='style/normalize.css') }}" />
+    <link rel="stylesheet" href="{{ get_url(path='style/index.min.css') }}" />
   </head>
   <body >
-      <main class="container">
-        {% block content %}{% endblock content %}
-        {% block content %}{% endblock content %}
-      </main>
+      {% block content %}{% endblock content %}
       {% include "widgets/bottombar.html" %}
       <!-- <section class="sidebar"> -->
       <!--   {% block sidebar %}{% endblock sidebar %} -->
@@ -26,10 +24,6 @@
   <script>
     document.addEventListener("DOMContentLoaded", function () {
       let currentPath = window.location.pathname;
-
-      if (currentPath.toLowerCase().endsWith(".html")) {
-        currentPath = currentPath.slice(0, -5);
-      }
 
       const links = document.querySelectorAll(".navbar a");
 
