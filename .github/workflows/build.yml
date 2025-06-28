@@ -40,7 +40,7 @@ jobs:
       - name: Generate Static Site
         run: |
           ./target/release/ary1337
-          cp -r assets dist/
+          cp -r static dist/
       - name: Setup Pages
         uses: actions/configure-pages@v5
       - name: Upload artifact
