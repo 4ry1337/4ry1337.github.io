@@ -3,6 +3,7 @@
 @use '../utilities/index.scss' as *;
 
 body {
+  @include padding(22, "b");
   color: var(--foreground);
   background-color: var(--background);
   transition: background-color 0.4s ease, color 0.4s ease;
@@ -36,11 +37,6 @@ body {
   -webkit-backdrop-filter: blur($blur-value);
 
   &>.active {
-    background-color: var(--primary);
-    color: var(--primary-foreground);
-
-    &:hover:not(:disabled) {
-      background-color: oklch(from var(--primary) l c h / 0.9);
-    }
+    @extend .primary;
   }
 }
