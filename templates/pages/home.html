@@ -1,9 +1,24 @@
-{% extends "layouts/base.html" %} {% block content %}
+{% extends "layouts/base.html" %}
 
-<main data-barba="container" data-barba-namespace="home" class="container">
-<div class="hero">
-  <h1 class="hero_title"> Rakhat Yskak </h1>
-</div>
+{% block content %}
+
+<main class="container">
+  <div class="hero">
+    <div class="hero_top">
+      <p>{{section.extra.personal.address.city}}</p>
+      <p>{{section.extra.personal.address.country}}</p>
+    </div>
+    <div class="hero_mid">
+      <h1> {{section.extra.personal.name}} </h1>
+      <h2> {{section.extra.personal.title}} </h2>
+    </div>
+    <div class="hero_bot">
+      <p>{{now() | date(format="%a %b %e")}}</p>
+    </div>
+  </div>
 </main>
 
+<pre>
+  {{ __tera_context }}
+</pre>
 {% endblock content %}

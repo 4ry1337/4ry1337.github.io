@@ -3,13 +3,34 @@
 @use '../utilities/index.scss' as *;
 
 .hero {
-  @include padding(50, "t");
+  min-height: 100svh;
+  display: grid;
+  grid-template-areas: "top", "mid", "bot";
+  place-items: center;
+  text-align: center;
+
+  @include padding(2.5);
 }
 
-.hero_title {
+.hero_top {
+  grid-area: "top";
   display: flex;
-  white-space: nowrap;
-  justify-content: center;
+  flex-direction: column;
 }
 
-.hero_description {}
+.hero_mid {
+  grid-area: "mid";
+  display: flex;
+  flex-direction: column;
+  @include gap(5);
+
+  &>h2 {
+    color: var(--muted-foreground);
+  }
+}
+
+.hero_bot {
+  grid-area: "bot";
+  display: flex;
+  flex-direction: column;
+}
