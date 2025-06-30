@@ -3,14 +3,7 @@
 @use "../utilities/index.scss" as *;
 @use "./button.scss" as *;
 
-a.button {
-  @extend .md;
-
-  color: var(--primary);
+a {
+  color: inherit;
   text-decoration: none;
-
-  &:hover:not(:disabled) {
-    text-decoration: underline;
-    text-underline-offset: 4px;
-  }
 }

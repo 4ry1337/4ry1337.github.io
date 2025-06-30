@@ -1,0 +1,49 @@
+[[technical]]
+name = "Rust"
+type = "Programming Language"
+level = "Proficient"
+
+[[technical]]
+name = "C"
+type = "Programming Language"
+level = "Proficient"
+
+[[technical]]
+name = "SQL"
+type = "Programming Language"
+level = "Familiar"
+
+[[technical]]
+name = "TypeScript"
+type = "Programming Language"
+level = "Familiar"
+
+[[technical]]
+name = "Git"
+type = "Software"
+level = "Proficient"
+
+[[technical]]
+name = "Docker"
+type = "Software"
+level = "Proficient"
+
+[[technical]]
+name = "PostgreSQL"
+type = "Software"
+level = "Proficient"
+
+[[technical]]
+name = "Actix-web"
+type = "Framework"
+level = "Proficient"
+
+[[technical]]
+name = "Axum"
+type = "Framework"
+level = "Proficient"
+
+[[technical]]
+name = "Next JS"
+type = "Framework"
+level = "Proficient"

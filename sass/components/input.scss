@@ -44,7 +44,7 @@ input {
     border-width: 0px;
     background-color: transparent;
     @include fluid-size(4, 4);
-    font-weight: $font-weight-medium
+    font-weight: 500
   }
 
   &::selection {

@@ -1,0 +1,38 @@
+@use '../variables/index.scss' as *;
+@use '../components/index.scss' as *;
+@use '../utilities/index.scss' as *;
+
+.notes {
+  @include padding(2.5);
+}
+
+.note-list {
+  display: flex;
+  flex-direction: column;
+}
+
+.note-item {
+  display: flex;
+  @include padding(5, "y");
+  @include padding(2.5, "x");
+  @include border-radius(2.5);
+
+  color: inherit;
+  align-items: center;
+
+  @include text-shadow-xs;
+  text-decoration: none;
+}
+
+.note-info {
+  display: flex;
+  flex-direction: column;
+  word-wrap: nowrap;
+  flex: 1 1 auto;
+
+  &>h3 {}
+
+  &>span {}
+}
+
+.note-button {}

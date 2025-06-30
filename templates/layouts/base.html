@@ -26,9 +26,11 @@
       links.forEach((link) => {
         const linkPath = new URL(link.href).pathname;
         if (linkPath === currentPath) {
-          link.classList.add("active");
+          link.classList.add("primary");
+          link.classList.remove("secondary");
         } else {
-          link.classList.remove("active");
+          link.classList.remove("primary");
+          link.classList.add("secondary");
         }
       });
     });

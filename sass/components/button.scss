@@ -13,7 +13,7 @@
   white-space: nowrap;
   line-height: 100%;
   letter-spacing: 0.05rem;
-  font-weight: $font-weight-semibold;
+  font-weight: 600;
   transition: all 0.2s ease;
 
   &:disabled {
@@ -75,7 +75,7 @@
     @include shadow-xs;
 
     &:hover:not(:disabled) {
-      background-color: oklch(from var(--primary) l c h / 0.9);
+      background-color: oklch(from var(--primary) l c h / 0.8);
     }
   }
 
@@ -95,27 +95,6 @@
     &:hover:not(:disabled) {
       background-color: var(--accent);
       color: var(--accent-foreground);
-    }
-  }
-
-  &.error {
-    background-color: var(--error);
-    color: $color-white;
-    @include shadow-xs;
-
-    &:hover:not(:disabled) {
-      background-color: oklch(from var(--error) l c h / 0.9);
-    }
-
-    &:focus-visible {
-      @include ring(3px, oklch(from var(--error) l c h / 0.2));
-    }
-
-    @at-root .dark & {
-      &:focus-visible {
-        background-color: oklch(from var(--error) l c h / 0.9);
-        @include ring(3px, oklch(from var(--error) l c h / 0.4));
-      }
     }
   }
 
