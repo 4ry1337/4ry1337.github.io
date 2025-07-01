@@ -1,44 +1,19 @@
 @use "./colors.scss" as *;
 
-$radius: 0.65rem;
-$spacing: 0.25rem;
-$color-black: #000;
-$color-white: #fff;
-
 :root {
-  --background: oklch(1 0 0);
-  --foreground: oklch(0.141 0.005 285.823);
-  --primary: oklch(0.705 0.213 47.604);
-  --primary-foreground: oklch(0.98 0.016 73.684);
-  --secondary: oklch(0.967 0.001 286.375);
-  --secondary-foreground: oklch(0.21 0.006 285.885);
-  --muted: oklch(0.967 0.001 286.375);
-  --muted-foreground: oklch(0.552 0.016 285.938);
-  --border: oklch(0.92 0.004 286.32);
-  --input: oklch(0.92 0.004 286.32);
-  --ring: oklch(0.705 0.213 47.604);
-  --shadow-color: #000;
-  --text-shadow-color: #000;
+  --radius: 0.65rem;
+  --spacing: 0.25rem;
 
-  --card: oklch(1 0 0);
-  --card-foreground: oklch(0.141 0.005 285.823);
-}
-
-[data-theme=dark] {
-  --background: oklch(0.141 0.005 285.823);
-  --foreground: oklch(0.985 0 0);
-  --primary: oklch(0.646 0.222 41.116);
-  --primary-foreground: oklch(0.98 0.016 73.684);
-  --secondary: oklch(0.274 0.006 286.033);
-  --secondary-foreground: oklch(0.985 0 0);
-  --muted: oklch(0.274 0.006 286.033);
-  --muted-foreground: oklch(0.705 0.015 286.067);
-  --border: oklch(1 0 0 / 10%);
-  --input: oklch(1 0 0 / 15%);
-  --ring: oklch(0.646 0.222 41.116);
-  --shadow-color: #000;
-  --text-shadow-color: #000;
-
-  --card: oklch(0.21 0.006 285.885);
-  --card-foreground: oklch(0.985 0 0);
+  --background: #EAD8A4;
+  --foreground: #1A1A1A;
+  --surface: #ECEDB0;
+  --surface-foreground: #4B4B4B;
+  --primary: #D6D85D;
+  --primary-foreground: #3D3D3D;
+  --secondary: #F68537;
+  --secondary-foreground: #1A1A1A;
+  --muted: #D2C9A7;
+  --muted-foreground: #383838;
+  --border: #C1BA99;
+  --ring: #AFA87C;
 }

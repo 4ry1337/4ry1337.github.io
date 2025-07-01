@@ -1,64 +1,62 @@
 @use "../variables/index.scss" as *;
 
 @mixin border-radius($number, $direction: None) {
-  $value: $number * $spacing;
-
   @if $direction ==t {
-    border-top-left-radius: $value;
-    border-top-right-radius: $value;
+    border-top-left-radius: calc($number * var(--radius));
+    border-top-right-radius: calc($number * var(--radius));
   }
 
   @else if $direction ==b {
-    border-bottom-right-radius: $value;
-    border-bottom-left-radius: $value;
+    border-bottom-right-radius: calc($number * var(--radius));
+    border-bottom-left-radius: calc($number * var(--radius));
   }
 
   @else if $direction ==l {
-    border-top-left-radius: $value;
-    border-bottom-left-radius: $value;
+    border-top-left-radius: calc($number * var(--radius));
+    border-bottom-left-radius: calc($number * var(--radius));
   }
 
   @else if $direction ==r {
-    border-top-right-radius: $value;
-    border-bottom-right-radius: $value;
+    border-top-right-radius: calc($number * var(--radius));
+    border-bottom-right-radius: calc($number * var(--radius));
   }
 
   @else if $direction ==tr {
-    border-top-right-radius: $value;
+    border-top-right-radius: calc($number * var(--radius));
   }
 
   @else if $direction ==tl {
-    border-top-left-radius: $value;
+    border-top-left-radius: calc($number * var(--radius));
   }
 
   @else if $direction ==br {
-    border-bottom-right-radius: $value;
+    border-bottom-right-radius: calc($number * var(--radius));
   }
 
   @else if $direction ==bl {
-    border-bottom-left-radius: $value;
+    border-bottom-left-radius: calc($number * var(--radius));
   }
 
   @else {
-    border-radius: $value;
+    border-radius: calc($number * var(--radius));
   }
 }
 
 
 .radius-sm {
-  border-radius: calc($radius - 4px)
+  border-radius: calc(var(--radius) - 4px)
 }
 
 .radius-md {
-  border-radius: calc($radius - 2px)
+  border-radius: calc(var(--radius) - 2px)
 }
 
 .radius-lg {
-  border-radius: $radius;
+  border-radius: var(--radius);
 }
 
 .radius-xl {
-  border-radius: calc($radius + 4px);
+  border-radius: calc(var(--radius) + 4px);
 }
 
 @mixin border-full {

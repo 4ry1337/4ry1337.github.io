@@ -1,5 +1,30 @@
+@use '../variables/index.scss' as *;
+@use '../components/index.scss' as *;
+@use '../utilities/index.scss' as *;
+
 @forward "typography.scss";
 @forward "layout.scss";
 @forward "hero.scss";
 @forward "notes.scss";
 @forward "note.scss";
+
+@media (prefers-reduced-motion: no-preference) {
+  .overflow-auto {
+    scroll-behavior: smooth;
+  }
+}
+
+body {
+  color: var(--foreground);
+  background-color: var(--background);
+
+  // space for bottombar
+  @include padding(23, "b");
+}
+
+pre {
+  white-space: pre-wrap;
+  /* Preserves formatting but allows wrapping */
+  word-wrap: break-word;
+  /* Forces long words to break */
+}

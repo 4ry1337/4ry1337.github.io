@@ -1,13 +1,24 @@
 {% extends "layouts/base.html" %} 
 
+
 {% block title %}
 About | {{ super() }}
 {%endblock title %}
 
 {% block content %}
 
-<main class="container">
+{% set personal = load_data(path="content/1_personal.toml", format="toml") %}
+{% set education = load_data(path="content/2_education.toml", format="toml") %}
+{% set projects = load_data(path="content/4_projects.toml", format="toml") %}
+{% set skills = load_data(path="content/5_skills.toml", format="toml") %}
 
+<main class="container">
+  <div>
+    <h1>{{ personal.name }}</h1>
+    <p>{{ personal.summary }}</p>
+  </div>
+      {% include "widgets/experience.html" %}
 </main>
+
 
 {% endblock content %}

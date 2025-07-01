@@ -3,7 +3,7 @@
 
 input {
   display: flex;
-  height: $spacing * 9;
+  height: calc(var(--spacing) * 9);
   width: 100%;
   min-width: 0px;
   @extend .radius-md;
@@ -40,7 +40,7 @@ input {
   &::file {
     color: var(--foreground);
     display: inline-flex;
-    height: $spacing * 7;
+    height: calc(var(--spacing) * 7);
     border-width: 0px;
     background-color: transparent;
     @include fluid-size(4, 4);
@@ -58,7 +58,7 @@ input {
 textarea {
   display: flex;
   field-sizing: content;
-  min-height: $spacing * 16;
+  min-height: calc(var(--spacing) * 16);
   width: 100%;
   @extend .radius-md;
   border: 1px solid var(--input);

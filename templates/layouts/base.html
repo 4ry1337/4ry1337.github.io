@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en" data-theme="light">
+<html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -16,46 +16,44 @@
       {% block content %}{% endblock content %}
       {% include "widgets/bottombar.html" %}
       <!-- {% block sidebar %}{% endblock sidebar %} -->
-    <!-- {% include "widgets/footer.html" %} -->
+      {% include "widgets/footer.html" %}
+<pre>
+  {{ __tera_context }}
+</pre>
   <script>
     document.addEventListener("DOMContentLoaded", function () {
       let currentPath = window.location.pathname;
 
-      const links = document.querySelectorAll(".navbar a");
+      const links = document.querySelectorAll(".navigation-link");
 
       links.forEach((link) => {
         const linkPath = new URL(link.href).pathname;
         if (linkPath === currentPath) {
-          link.classList.add("primary");
-          link.classList.remove("secondary");
+          link.classList.add("active");
         } else {
-          link.classList.remove("primary");
-          link.classList.add("secondary");
+          link.classList.remove("active");
         }
       });
     });
   </script>
-  <script>
-    const button = document.querySelector("[data-toggle-theme]");
-    const storage = localStorage.getItem("theme");
-    const system = window.matchMedia("(prefers-color-scheme: dark)");
-    let current = storage !== null ? storage : system.matches  ? "dark" : "light";
-
-    const setTheme = (theme) => {
-      document.getElementById("light").style.display = theme === "dark" ? "inline" : "none";
-      document.getElementById("dark").style.display = theme === "dark" ? "none" : "inline";
-      document.documentElement.setAttribute("data-theme", theme);
-      localStorage.setItem("theme", theme);
-      current = theme;
-      button.setAttribute("aria-label", theme === "dark" ? "Change to light theme" : "Change to dark theme");
-    };
-
-    button.addEventListener("click", () => {
-      console.log("theme changed");
-      setTheme(current === "dark" ? "light" : "dark")
-    });
-
-    document.addEventListener("DOMContentLoaded", setTheme(current));
-  </script>
+  <!-- <script> -->
+  <!--   const button = document.querySelector("[data-toggle-theme]"); -->
+  <!--   const storage = localStorage.getItem("theme"); -->
+  <!--   const system = window.matchMedia("(prefers-color-scheme: dark)"); -->
+  <!--   let current = storage !== null ? storage : system.matches  ? "dark" : "light"; -->
+  <!--   const setTheme = (theme) => { -->
+  <!--     document.getElementById("light").style.display = theme === "dark" ? "inline" : "none"; -->
+  <!--     document.getElementById("dark").style.display = theme === "dark" ? "none" : "inline"; -->
+  <!--     document.documentElement.setAttribute("data-theme", theme); -->
+  <!--     localStorage.setItem("theme", theme); -->
+  <!--     current = theme; -->
+  <!--     button.setAttribute("aria-label", theme === "dark" ? "Change to light theme" : "Change to dark theme"); -->
+  <!--   }; -->
+  <!--   button.addEventListener("click", () => { -->
+  <!--     console.log("theme changed"); -->
+  <!--     setTheme(current === "dark" ? "light" : "dark") -->
+  <!--   }); -->
+  <!--   document.addEventListener("DOMContentLoaded", setTheme(current)); -->
+  <!-- </script> -->
   </body>
 </html>

@@ -1,28 +1,23 @@
+@use "sass:math";
 @use "../variables/index.scss" as *;
 @use "../variables/index.scss" as *;
 
-@mixin fluid-size($min_font_size_multiplier, $max_font_size_multiplier) {
-  $min_viewport_width: 30rem;
-  $max_viewport_width: $breakpoint-xl;
-  $scale: 1;
+@mixin fluid-size($min_multiplier, $max_multiplier) {
+  $min_viewport: 30rem;
+  $max_viewport: $breakpoint-xl;
+  $viewport_offset: math.div($min_viewport, 100);
 
-  // Calculate actual font sizes by multiplying with spacing
-  $min_font_size: $min_font_size_multiplier * $spacing;
-  $max_font_size: $max_font_size_multiplier * $spacing;
+  $min_size: $min_multiplier * 1rem;
+  $max_size: $max_multiplier * 1rem;
 
-  // Calculate viewport width offset (as percentage)
-  $viewport_width_offset: calc($min_viewport_width / 100);
+  $delta: (
+    $max_multiplier - $min_multiplier) * 1rem;
+  $linear_factor: math.div(100 * $delta, $max_viewport - $min_viewport
+  );
 
-  // Calculate linear factor
-  $linear_factor: 100 * calc(($max_font_size - $min_font_size) / ($max_viewport_width - $min_viewport_width));
-
-  // Scale linear factor by minimum font size
-  $linear_factor_scaled: $linear_factor * $scale;
-
-  // Apply clamp formula
-  font-size: clamp(#{$min_font_size},
-    #{$min_font_size} + ((1vw - #{$viewport_width_offset}) * #{$linear_factor_scaled}),
-    #{$max_font_size});
+font-size: clamp(calc(#{$min_multiplier} * var(--spacing)),
+  calc(#{$min_multiplier} * var(--spacing) + (1vw - #{$viewport_offset}) * #{$linear_factor}),
+  calc(#{$max_multiplier} * var(--spacing)));
 }
 
 @mixin line-clamp($number) {

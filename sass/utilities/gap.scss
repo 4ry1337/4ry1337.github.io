@@ -1,35 +1,31 @@
 @use "../variables/index.scss" as *;
 
 @mixin gap($number, $direction: None) {
-  $value: $number * $spacing;
-
   @if $direction ==x {
-    column-gap: $value;
+    column-gap: calc($number * var(--spacing));
   }
 
   @else if $direction ==y {
-    row-gap: $value;
+    row-gap: calc($number * var(--spacing));
   }
 
   @else {
-    gap: $value;
+    gap: calc($number * var(--spacing));
   }
 }
 
 @mixin space($number, $direction: x, $reverse: 0) {
-  $value: $number * $spacing;
-
   @if $direction ==y {
     &> :not(:last-child) {
-      margin-block-start: $value * $reverse;
-      margin-block-end: $value * (1 - $reverse);
+      margin-block-start: calc($number * var(--spacing)) * $reverse;
+      margin-block-end: calc($number * var(--spacing)) * (1 - $reverse);
     }
   }
 
   @else {
     &> :not(:last-child) {
-      margin-inline-start: $value * $reverse;
-      margin-inline-end: $value * (1 - $reverse);
+      margin-inline-start: calc($number * var(--spacing)) * $reverse;
+      margin-inline-end: calc($number * var(--spacing)) * (1 - $reverse);
     }
   }
 }

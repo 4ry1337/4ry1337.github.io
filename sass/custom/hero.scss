@@ -16,6 +16,7 @@
   grid-area: "top";
   display: flex;
   flex-direction: column;
+  color: var(--muted-foreground);
 }
 
 .hero_mid {
@@ -33,4 +34,5 @@
   grid-area: "bot";
   display: flex;
   flex-direction: column;
+  color: var(--muted-foreground);
 }

@@ -1,35 +1,33 @@
 @use "../variables/index.scss" as *;
 
 @mixin margin($number, $direction: None) {
-  $value: $number * $spacing;
-
   @if $direction ==t {
-    margin-top: $value;
+    margin-top: calc($number * var(--spacing));
   }
 
   @else if $direction ==b {
-    margin-bottom: $value;
+    margin-bottom: calc($number * var(--spacing));
   }
 
   @else if $direction ==l {
-    margin-left: $value;
+    margin-left: calc($number * var(--spacing));
   }
 
   @else if $direction ==r {
-    margin-right: $value;
+    margin-right: calc($number * var(--spacing));
   }
 
   @else if $direction ==x {
-    margin-left: $value;
-    margin-right: $value;
+    margin-left: calc($number * var(--spacing));
+    margin-right: calc($number * var(--spacing));
   }
 
   @else if $direction ==y {
-    margin-top: $value;
-    margin-bottom: $value;
+    margin-top: calc($number * var(--spacing));
+    margin-bottom: calc($number * var(--spacing));
   }
 
   @else {
-    margin: $value;
+    margin: calc($number * var(--spacing));
   }
 }

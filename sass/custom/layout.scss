@@ -2,19 +2,6 @@
 @use '../components/index.scss' as *;
 @use '../utilities/index.scss' as *;
 
-@media (prefers-reduced-motion: no-preference) {
-  .overflow-auto {
-    scroll-behavior: smooth;
-  }
-}
-
-body {
-  @include padding(22, "b");
-  color: var(--foreground);
-  background-color: var(--background);
-  transition: background-color 0.4s ease, color 0.4s ease;
-}
-
 .bottombar {
   position: fixed;
   right: 0;
@@ -23,22 +10,4 @@ body {
 
   display: flex;
   justify-content: center;
-}
-
-.navbar {
-  z-index: 2;
-  display: inline-flex;
-  flex-wrap: nowrap;
-  flex-direction: row;
-  justify-content: center;
-  @include space(2);
-  @include padding(1.5);
-  @include shadow-xl();
-  @include border-full();
-
-  $blur-value: 10px;
-  $brightness-value: 1.1;
-  $saturate-value: 1.5;
-  backdrop-filter: blur($blur-value) brightness($brightness-value) saturate($saturate-value);
-  -webkit-backdrop-filter: blur($blur-value) brightness($brightness-value) saturate($saturate-value);
 }
