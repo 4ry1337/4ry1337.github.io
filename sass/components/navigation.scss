@@ -34,10 +34,11 @@
   @include border-full();
 
   outline: none;
-  background-color: var(--secondary);
-  color: var(--secondary-foreground);
+  background-color: transparent;
 
   &:hover {
+    background-color: var(--primary);
+    color: var(--primary-foreground);
     scale: 1.05;
   }
 
@@ -77,10 +78,11 @@
   @include border-full();
 
   outline: none;
-  background-color: var(--secondary);
-  color: var(--secondary-foreground);
+  background-color: transparent;
 
   &:hover {
+    background-color: var(--primary);
+    color: var(--primary-foreground);
     scale: 1.05;
   }
 

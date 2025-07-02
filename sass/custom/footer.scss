@@ -1,0 +1,23 @@
+@use '../variables/index.scss' as *;
+@use '../utilities/index.scss' as *;
+
+footer {
+  background-color: var(--secondary);
+  color: var(--secondary-foreground);
+  min-height: 100svh;
+  overflow: hidden;
+
+  // space for bottombar
+  @include padding(24, "b");
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
+  @include gap(6);
+}
+
+.footer-title {
+  font-size: 20vw;
+  /* @include fluid-size(30, 40); */
+}

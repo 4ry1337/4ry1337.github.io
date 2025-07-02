@@ -1,6 +1,0 @@
-{% set personal = load_data(path="content/1_personal.toml", format="toml") %} {%
-set contacts = load_data(path="content/6_contacts.toml", format="toml") %}
-
-<footer class="container">
-  ©{{ now() | date(format="%Y") }} — {{personal.name}}
-</footer>

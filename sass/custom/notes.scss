@@ -20,6 +20,20 @@
   color: inherit;
   align-items: center;
 
+  background-color: transparent;
+
+  &:hover {
+    background-color: var(--primary);
+    color: var(--primary-foreground);
+    scale: 1.05;
+  }
+
+  &:focus {
+    background-color: var(--primary);
+    color: var(--primary-foreground);
+    scale: 1.05;
+  }
+
   @include text-shadow-xs;
   text-decoration: none;
 }

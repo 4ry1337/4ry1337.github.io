@@ -7,6 +7,7 @@
 @forward "hero.scss";
 @forward "notes.scss";
 @forward "note.scss";
+@forward "footer.scss";
 
 @media (prefers-reduced-motion: no-preference) {
   .overflow-auto {
@@ -17,9 +18,6 @@
 body {
   color: var(--foreground);
   background-color: var(--background);
-
-  // space for bottombar
-  @include padding(23, "b");
 }
 
 pre {

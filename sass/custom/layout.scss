@@ -11,3 +11,21 @@
   display: flex;
   justify-content: center;
 }
+
+.topbar {
+  position: fixed;
+  right: 0;
+  left: 0;
+  top: 20px;
+
+  display: flex;
+  justify-content: center;
+}
+
+.sidebar {
+  display: hidden;
+
+  @include md {
+    display: flex
+  }
+}

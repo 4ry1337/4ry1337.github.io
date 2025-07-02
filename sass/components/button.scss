@@ -91,6 +91,7 @@
 
   &.ghost {
     background-color: transparent;
+    color: var(--primary);
 
     &:hover {
       background-color: var(--primary);
@@ -100,7 +101,7 @@
 
   &.outline {
     border: 1px solid var(--border);
-    background-color: var(--background);
+    background-color: transparent;
     @include shadow-xs;
   }
 }
