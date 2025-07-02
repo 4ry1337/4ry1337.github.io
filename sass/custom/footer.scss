@@ -4,20 +4,57 @@
 footer {
   background-color: var(--secondary);
   color: var(--secondary-foreground);
-  min-height: 100svh;
-  overflow: hidden;
+}
 
-  // space for bottombar
-  @include padding(24, "b");
+.footer {
+  min-height: 100svh;
 
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: flex-end;
-  @include gap(6);
+  justify-content: end;
+  @include gap(8);
+
+  @include padding(2.5);
+  @include padding(24, "y");
 }
 
 .footer-title {
-  font-size: 20vw;
-  /* @include fluid-size(30, 40); */
+  @include fluid-size(17, 40);
+  text-transform: uppercase;
+}
+
+.footer-links {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  @include gap(3, "x");
+  @include gap(1.5, "y");
+}
+
+.footer-link {
+  display: inline-flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  @include gap(2);
+
+  @include padding(4, "x");
+  @include padding(2, "y");
+
+  @include shadow-lg;
+  @include border-full();
+
+  &:hover {
+    background-color: var(--primary);
+    color: var(--primary-foreground);
+    scale: 1.05;
+  }
+
+  svg {
+    height: calc(8 * var(--spacing));
+    width: calc(8 * var(--spacing));
+  }
 }

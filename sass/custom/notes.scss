@@ -1,41 +1,37 @@
 @use '../variables/index.scss' as *;
-@use '../components/index.scss' as *;
 @use '../utilities/index.scss' as *;
 
 .notes {
   @include padding(2.5);
+  min-height: 100svh;
 }
 
 .note-list {
   display: flex;
   flex-direction: column;
+  @include gap(2);
 }
 
 .note-item {
-  display: flex;
-  @include padding(5, "y");
-  @include padding(2.5, "x");
-  @include border-radius(2.5);
-
-  color: inherit;
+  display: inline-flex;
   align-items: center;
 
-  background-color: transparent;
+  @include padding(5, "y");
+  @include padding(2.5, "x");
+
+  @include border-radius(2.5);
+  outline: none;
+  border: 1px solid currentColor;
+  @include shadow-md();
 
   &:hover {
-    background-color: var(--primary);
-    color: var(--primary-foreground);
-    scale: 1.05;
+    scale: 1.02;
   }
 
-  &:focus {
-    background-color: var(--primary);
-    color: var(--primary-foreground);
-    scale: 1.05;
+  &:focus-visible {
+    border-color: var(--ring);
+    @include ring(3px, oklch(from var(--ring) l c h / 0.5));
   }
-
-  @include text-shadow-xs;
-  text-decoration: none;
 }
 
 .note-info {

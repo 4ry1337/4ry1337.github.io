@@ -13,11 +13,12 @@
     <link rel="stylesheet" href="{{ get_url(path='style/index.min.css') }}" />
   </head>
   <body>
-      <!-- {% include "components/topbar.html" %} -->
+      {#{% include "components/topbar.html" %}#}
       {% block content %}{% endblock content %}
       {% block sidebar %}{% endblock sidebar %}
-      {% include "components/bottombar.html" %}
       {% include "components/footer.html" %}
+      {% include "components/bottombar.html" %}
+      {% block script %}
       <script>
         document.addEventListener("DOMContentLoaded", function () {
           let currentPath = window.location.pathname;
@@ -34,24 +35,6 @@
           });
         });
       </script>
-      <!-- <script> -->
-      <!--   const button = document.querySelector("[data-toggle-theme]"); -->
-      <!--   const storage = localStorage.getItem("theme"); -->
-      <!--   const system = window.matchMedia("(prefers-color-scheme: dark)"); -->
-      <!--   let current = storage !== null ? storage : system.matches  ? "dark" : "light"; -->
-      <!--   const setTheme = (theme) => { -->
-      <!--     document.getElementById("light").style.display = theme === "dark" ? "inline" : "none"; -->
-      <!--     document.getElementById("dark").style.display = theme === "dark" ? "none" : "inline"; -->
-      <!--     document.documentElement.setAttribute("data-theme", theme); -->
-      <!--     localStorage.setItem("theme", theme); -->
-      <!--     current = theme; -->
-      <!--     button.setAttribute("aria-label", theme === "dark" ? "Change to light theme" : "Change to dark theme"); -->
-      <!--   }; -->
-      <!--   button.addEventListener("click", () => { -->
-      <!--     console.log("theme changed"); -->
-      <!--     setTheme(current === "dark" ? "light" : "dark") -->
-      <!--   }); -->
-      <!--   document.addEventListener("DOMContentLoaded", setTheme(current)); -->
-      <!-- </script> -->
+      {% endblock script %}
   </body>
 </html>

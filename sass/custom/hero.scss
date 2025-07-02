@@ -4,19 +4,20 @@
 
 .hero {
   min-height: 100svh;
+  grid-template-areas: "top" "mid" "bot";
+
   display: grid;
-  grid-template-areas: "top", "mid", "bot";
   place-items: center;
   text-align: center;
 
   @include padding(2.5);
+  @include padding(24, "y");
 }
 
 .hero_top {
   grid-area: "top";
   display: flex;
   flex-direction: column;
-  color: var(--muted-foreground);
 }
 
 .hero_mid {
@@ -25,8 +26,8 @@
   flex-direction: column;
   @include gap(5);
 
-  &>h2 {
-    color: var(--muted-foreground);
+  &>h1 {
+    color: var(--secondary);
   }
 }
 
@@ -34,5 +35,4 @@
   grid-area: "bot";
   display: flex;
   flex-direction: column;
-  color: var(--muted-foreground);
 }

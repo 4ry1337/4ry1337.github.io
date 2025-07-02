@@ -2,6 +2,18 @@
 @use '../components/index.scss' as *;
 @use '../utilities/index.scss' as *;
 
+body {
+  color: var(--foreground);
+  background-color: var(--background);
+}
+
+pre {
+  white-space: pre-wrap;
+  /* Preserves formatting but allows wrapping */
+  word-wrap: break-word;
+  /* Forces long words to break */
+}
+
 .bottombar {
   position: fixed;
   right: 0;
