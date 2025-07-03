@@ -1,0 +1,56 @@
+@use '../variables/index.scss' as *;
+@use '../utilities/index.scss' as *;
+
+.about {
+  @include padding(24, "y");
+  @include space(16, "y");
+}
+
+.about-title {
+  @include padding(4, "x");
+}
+
+.bio {
+  @include padding(4, "x");
+  display: grid;
+  grid-template-columns: repeat(1, minmax(0, 1fr));
+
+  @include sm {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  @include gap(12);
+}
+
+.summary {
+  @include padding(6, "r");
+}
+
+.skills {
+  @include border-radius(3);
+  color: var(--surface-foreground);
+  background-color: var(--surface);
+
+  @include space(4, "y");
+
+  @include padding(4);
+
+  @include sm {
+    @include padding(8);
+  }
+}
+
+.skill-types {
+  @include space(4, "y");
+}
+
+.skill-type {
+  color: var(--muted-foreground);
+  @include margin(2, "b");
+}
+
+.skill-list {
+  display: inline-flex;
+  flex-wrap: wrap;
+  @include gap(2);
+}

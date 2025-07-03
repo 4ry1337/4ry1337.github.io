@@ -17,8 +17,8 @@
 @mixin space($number, $direction: x, $reverse: 0) {
   @if $direction ==y {
     &> :not(:last-child) {
-      margin-block-start: calc($number * var(--spacing)) * $reverse;
-      margin-block-end: calc($number * var(--spacing)) * (1 - $reverse);
+      margin-block-start: calc(calc($number * var(--spacing)) * $reverse);
+      margin-block-end: calc(calc($number * var(--spacing)) * (1 - $reverse));
     }
   }
 

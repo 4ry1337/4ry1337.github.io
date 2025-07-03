@@ -4,17 +4,17 @@ company = "Quartz Blockchain Development"
 location = "Remote"
 start_date = "2025-04-01"
 end_date = "2025-05-31"
+achievements = [
+  "Developed Telegram Mini-Apps using DDD and TDD",
+  "Refactored frontend using feature-slice design",
+  "Leveraged modern development practices and cloud technologies",
+]
 technologies = [
   "Rust",
   "Telegram API",
   "DigitalOcean",
   "React",
   "Feature-Slice Design",
-]
-achievements = [
-  "Developed Telegram Mini-Apps using DDD and TDD",
-  "Refactored frontend using feature-slice design",
-  "Leveraged modern development practices and cloud technologies",
 ]
 
 [[experience]]
@@ -23,10 +23,18 @@ company = "ROKY.ROCKS"
 location = "Astana, Kazakhstan"
 start_date = "2023-05-01"
 end_date = "2023-08-31"
-technologies = ["Git", "Sockets", "Caching", "WebSockets", "Microservices"]
 achievements = [
   "Developed web service used by school league tournaments to stream matches",
   "Optimized Web Socket service to improve stability by implementing long-polling",
   "Resolved critical business issues by troubleshooting UI, Web Socket server, and email notification issues",
   "Leveraged knowledge in caching and locally persistent data with microservice debugging",
+]
+technologies = [
+  "Git",
+  "Vue",
+  "GitLab",
+  "Sockets",
+  "Caching",
+  "WebSockets",
+  "Microservices",
 ]
