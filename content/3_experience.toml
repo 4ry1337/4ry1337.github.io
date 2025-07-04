@@ -3,7 +3,7 @@ title = "Rust Developer Internship"
 company = "Quartz Blockchain Development"
 location = "Remote"
 start_date = "2025-04-01"
-end_date = "2025-05-31"
+end_date = "2025-07-31"
 achievements = [
   "Developed Telegram Mini-Apps using DDD and TDD",
   "Refactored frontend using feature-slice design",

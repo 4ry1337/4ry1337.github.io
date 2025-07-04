@@ -2,26 +2,10 @@
 
 {% block content %}
 
-{% set personal = load_data(path="content/1_personal.toml", format="toml") %}
-
 <main class="container">
-  <div class="hero">
-    <div class="hero_top">
-      <p>{{personal.address.city}}</p>
-      <p>{{personal.address.country}}</p>
-    </div>
-    <div class="hero_mid">
-      <h1> {{personal.name}} </h1>
-      <h2> {{personal.title}} </h2>
-    </div>
-    <div class="hero_bot">
-      <p>{{now() | date(format="%a %b %e")}}</p>
-    </div>
-  </div>
-  <!-- <button class="button md primary">primary</button> -->
-  <!-- <button class="button md secondary">secondary</button> -->
-  <!-- <button class="button md ghost">ghost</button> -->
-  <!-- <button class="button md outline">outline</button> -->
+  {% include "widgets/hero.html" %}
+  {% include "widgets/about.html" %}
+  {% include "widgets/experience.html" %}
 </main>
 
 {% endblock content %}

@@ -24,8 +24,8 @@
 
   @else {
     &> :not(:last-child) {
-      margin-inline-start: calc($number * var(--spacing)) * $reverse;
-      margin-inline-end: calc($number * var(--spacing)) * (1 - $reverse);
+      margin-inline-start: calc(calc($number * var(--spacing)) * $reverse);
+      margin-inline-end: calc(calc($number * var(--spacing)) * (1 - $reverse));
     }
   }
 }

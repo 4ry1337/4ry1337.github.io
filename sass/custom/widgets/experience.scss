@@ -1,0 +1,67 @@
+@use '../../variables/index.scss' as *;
+@use '../../utilities/index.scss' as *;
+
+.experience {
+  @include padding(24, "y");
+  @include space(8, "y");
+
+  >.header {
+    @include padding(4, "x");
+    color: var(--secondary)
+  }
+
+  >.body {
+    display: grid;
+    grid-template-columns: 1fr;
+    place-items: start;
+  }
+
+  .table {
+    border-collapse: separate;
+    border-spacing: calc(4 * var(--spacing)) calc(4 * var(--spacing));
+    table-layout: fixed;
+
+    tr {
+      &:first-child {
+        color: var(--secondary);
+      }
+
+      &:not(:first-child) {
+        th {
+          color: var(--muted-foreground);
+        }
+      }
+    }
+
+    th {
+      text-align: right;
+      vertical-align: baseline;
+    }
+
+    td {
+      vertical-align: baseline;
+    }
+  }
+}
+
+.achievement {
+  @include padding(6, "r");
+
+  >.list {
+    list-style: circle;
+    list-style-position: outside;
+    @include space(2, "y");
+    @include margin(4, "l");
+  }
+}
+
+.technology {
+  display: inline-flex;
+  align-items: center;
+
+  >.list {
+    display: inline-flex;
+    flex-wrap: wrap;
+    @include gap(2);
+  }
+}

@@ -1,0 +1,15 @@
+{% set personal = load_data(path="content/1_personal.toml", format="toml") %}
+
+<div class="hero">
+  <div class="hero_top">
+    <p>{{personal.address.city}}</p>
+    <p>{{personal.address.country}}</p>
+  </div>
+  <div class="hero_mid">
+    <h1>{{personal.name}}</h1>
+    <h2>{{personal.title}}</h2>
+  </div>
+  <div class="hero_bot">
+    <p>{{now() | date(format="%a %b %e")}}</p>
+  </div>
+</div>

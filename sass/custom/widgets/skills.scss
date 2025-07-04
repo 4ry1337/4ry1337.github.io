@@ -1,0 +1,32 @@
+@use '../../variables/index.scss' as *;
+@use '../../utilities/index.scss' as *;
+
+.skills {
+  @include space(4, "y");
+  @include padding(4);
+
+  @include sm {
+    @include padding(8);
+  }
+
+  @include border-radius(3);
+  color: var(--surface-foreground);
+  background-color: var(--surface);
+
+  >.header {}
+
+  >.body {
+    @include space(4, "y");
+  }
+
+  .skill-type {
+    color: var(--muted-foreground);
+    @include margin(2, "b");
+  }
+
+  .skill-list {
+    display: inline-flex;
+    flex-wrap: wrap;
+    @include gap(2);
+  }
+}

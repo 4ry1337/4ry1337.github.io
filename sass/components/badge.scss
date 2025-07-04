@@ -1,0 +1,50 @@
+@use "../variables/index.scss" as *;
+@use "../utilities/index.scss" as *;
+
+.badge {
+  display: inline-flex;
+  width: fit-content;
+  overflow: hidden;
+
+  @include gap(1);
+  flex-shrink: 0;
+  align-items: center;
+  justify-content: center;
+
+  @include border-full;
+  border-width: 1px;
+  @include padding(2, "x");
+  @include padding(0.5, "y");
+  white-space: nowrap;
+
+  /* text-xs font-medium  */
+  &>svg {
+    height: calc(3 * var(--spacing));
+    width: calc(3 * var(--spacing));
+    pointer-events: none;
+  }
+
+  &:focus-visible {
+    border-color: var(--ring);
+    @include ring(3px, oklch(from var(--ring) l c h / 0.5));
+  }
+
+  /* aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive */
+  /* transition: color, box-shadow; */
+
+  border-color: transparent;
+  background-color: var(--primary);
+  color: var(--primary-foreground);
+  /* default: " [a&]:hover:bg-primary/90", */
+
+  .secondary {
+    background-color: var(--secondary);
+    color: var(--secondary-foreground);
+    /* [a&]:hover:bg-secondary/90", */
+  }
+
+  .outline {
+    color: var(--foreground);
+    /* [a&]:hover:bg-accent [a&]:hover:text-accent-foreground */
+  }
+}

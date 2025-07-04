@@ -1,2 +1,53 @@
-{% set experience = load_data(path="content/3_experience.toml", format="toml")
-%}
+{% set experience = load_data(path="content/3_experience.toml", format="toml")%}
+
+<section class="experience">
+  <h2 class="header">Experience</h2>
+  <div class="body">
+    {% for experience in experience.experience %}
+    <table class="table">
+      <tr class="title">
+        <th><span>{{ experience.start_date | date(format="%b %Y") }}</span> - <span>{{ experience.end_date | date(format="%b %Y") }}</span></th>
+        <td>
+          <h3>{{ experience.title }}</h3>
+        </td>
+      </tr>
+      <tr class="company">
+        <th>Company:</th>
+        <td>
+          <h4>{{ experience.company }}</h4>
+        </td>
+      </tr>
+      <tr class="location">
+        <th>Location:</th>
+        <td>
+          <h5>{{ experience.location }}</h5>
+        </td>
+      </tr>
+      <tr class="achievements">
+        <th>Achievements:</th>
+        <td>
+          <div class="achievement">
+            <ul class="list">
+              {% for achievement in experience.achievements %}
+              <li>{{ achievement }}</li>
+              {% endfor %}
+            </ul>
+          </div>
+        </td>
+      </tr>
+      <tr class="technologies">
+        <th>Used:</th>
+        <td>
+          <div class="technology">
+            <ul class="list">
+              {% for technology in experience.technologies %}
+              <li class="badge">{{ technology }}</li>
+              {% endfor %}
+            </ul>
+          </div>
+        </td>
+      </tr>
+    </table>
+    {% endfor %}
+  </div>
+</section>

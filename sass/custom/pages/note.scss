@@ -1,0 +1,21 @@
+@use '../../variables/index.scss' as *;
+@use '../../utilities/index.scss' as *;
+
+.note {
+  @include padding(4, "x");
+  @include padding(24, "y");
+  @include space(16, "y");
+
+  >header {
+    >.title {
+      color: var(--secondary);
+      @include fluid-size(17, 22);
+    }
+  }
+
+  >article {
+    @include space(8, "y");
+  }
+
+  >footer {}
+}

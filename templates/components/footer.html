@@ -2,33 +2,35 @@
 set contacts = load_data(path="content/6_contacts.toml", format="toml") %}
 
 <footer id="footer">
-  <div class="container footer">
-    <h1 class="footer-title">CONTACTS</h1>
-    <div class="footer-links">
-      {% for contact in contacts.contacts %}
-      <a class="footer-link" href="{{ contact.url | safe }}">
-        {% if contact.icon %} {{ contact.icon | safe }} {% else %}
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          width="24"
-          height="24"
-          viewBox="0 0 24 24"
-          fill="none"
-          stroke="currentColor"
-          stroke-width="2"
-          stroke-linecap="round"
-          stroke-linejoin="round"
-          class="lucide lucide-arrow-up-right-icon lucide-arrow-up-right"
-        >
-          <path d="M7 7h10v10" />
-          <path d="M7 17 17 7" />
-        </svg>
-        {% endif %} {{ contact.name }}
-      </a>
-      {% endfor %}
+  <div class="container">
+    <div class="footer">
+      <h1 class="header">CONTACTS</h1>
+      <div class="list">
+        {% for contact in contacts.contacts %}
+        <a class="item" href="{{ contact.url | safe }}">
+          {% if contact.icon %} {{ contact.icon | safe }} {% else %}
+          <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              class="lucide lucide-arrow-up-right-icon lucide-arrow-up-right"
+              >
+              <path d="M7 7h10v10" />
+              <path d="M7 17 17 7" />
+          </svg>
+            {% endif %} {{ contact.name }}
+        </a>
+        {% endfor %}
+      </div>
+      <small class="subtitle">
+        All rights reserved ©{{ now() | date(format="%Y") }} — {{personal.name}}
+      </small>
     </div>
-    <small class="footer-subtitle">
-      All rights reserved ©{{ now() | date(format="%Y") }} — {{personal.name}}
-    </small>
   </div>
 </footer>

@@ -1,57 +1,54 @@
-types = ["programming languages", "databases", "frameworks", "tools"]
+types = ["languages", "databases", "frameworks", "tools"]
 levels = ["proficient", "familiar"]
 
-[[skills]]
-name = "rust"
-type = "programming languages"
+[[technical.languages]]
+name = "Rust"
 level = "proficient"
 
-[[skills]]
-name = "javascrypt"
-type = "programming languages"
+[[technical.languages]]
+name = "Javascrypt"
 level = "proficient"
 
-[[skills]]
-name = "c++"
-type = "programming languages"
+[[technical.languages]]
+name = "C++"
 level = "familiar"
 
-[[skills]]
-name = "sql"
-type = "programming languages"
+[[technical.languages]]
+name = "SQL"
 level = "familiar"
 
-[[skills]]
-name = "typescript"
-type = "programming languages"
+[[technical.languages]]
+name = "Typescript"
 level = "familiar"
 
-[[skills]]
-name = "git"
-type = "tools"
+[[technical.tools]]
+name = "Git"
 level = "proficient"
 
-[[skills]]
-name = "docker"
-type = "tools"
+[[technical.tools]]
+name = "Docker"
 level = "proficient"
 
-[[skills]]
-name = "postgresql"
-type = "databases"
+[[technical.tools]]
+name = "DigitalOcean"
+level = "familiar"
+
+[[technical.tools]]
+name = "Github Actions"
+level = "familiar"
+
+[[technical.databases]]
+name = "Postgresql"
 level = "proficient"
 
-[[skills]]
-name = "actix-web"
-type = "frameworks"
+[[technical.frameworks]]
+name = "Actix-Web"
 level = "proficient"
 
-[[skills]]
-name = "axum"
-type = "frameworks"
+[[technical.frameworks]]
+name = "Axum"
 level = "proficient"
 
-[[skills]]
-name = "next.js"
-type = "frameworks"
+[[technical.frameworks]]
+name = "Next.js"
 level = "proficient"

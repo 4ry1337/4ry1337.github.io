@@ -1,6 +1,5 @@
-@use '../variables/index.scss' as *;
-@use '../components/index.scss' as *;
-@use '../utilities/index.scss' as *;
+@use '../../variables/index.scss' as *;
+@use '../../utilities/index.scss' as *;
 
 body {
   color: var(--foreground);

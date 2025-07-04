@@ -1,0 +1,9 @@
+{% set personal = load_data(path="content/1_personal.toml", format="toml") %}
+
+<section class="about">
+  <h1 class="header">My background</h1>
+  <div class="body">
+    <p>{{ personal.summary }}</p>
+    {% include "widgets/skills.html" %}
+  </div>
+</section>

@@ -1,15 +1,20 @@
 {% extends "layouts/base.html" %} {% block content %}
 <main class="container">
-  <div class="note-header">
-    <h1 class="note-title">{{ page.title }}</h1>
-    <!-- <h3 class="content-description">{{ page.title }}</h3> -->
-    <div>
-      <!-- <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-calendar-icon lucide-calendar"><path d="M8 2v4"/><path d="M16 2v4"/><rect width="18" height="18" x="3" y="4" rx="2"/><path d="M3 10h18"/></svg> -->
-      <span>{{ page.date }}</span>
-    </div>
-  </div>
-  <div class="note-body">
-    {{ page.content | safe }} 
+  <div class="note">
+    <header>
+      <h1 class="title">{{ page.title }}</h1>
+      <!-- <h3 class="content-description">{{ page.title }}</h3> -->
+      <div class="date">
+        <!-- <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-calendar-icon lucide-calendar"><path d="M8 2v4"/><path d="M16 2v4"/><rect width="18" height="18" x="3" y="4" rx="2"/><path d="M3 10h18"/></svg> -->
+        <span>{{ page.date }}</span>
+      </div>
+    </header>
+    <article>
+      {{ page.content | safe }} 
+    </article>
+    <footer>
+      hello
+    </footer>
   </div>
 </main>
 {% endblock content %}

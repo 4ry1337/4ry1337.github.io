@@ -1,7 +1,5 @@
-@forward "footer.scss";
-@forward "about.scss";
-@forward "hero.scss";
-@forward "layout.scss";
-@forward "note.scss";
-@forward "notes.scss";
+@forward "components/index.scss";
+@forward "layout/base.scss";
+@forward "pages/index.scss";
+@forward "widgets/index.scss";
 @forward "typography.scss";

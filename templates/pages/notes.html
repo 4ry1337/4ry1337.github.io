@@ -7,16 +7,14 @@
 {% block content %}
 <main class="container">
   <div class="notes">
-    <h1>{{ section.title }}</h1>
-    <div class="note-list">
-      <!-- If you are using pagination, section.pages will be empty.
-           You need to use the paginator object -->
+    <h1 class="header">{{ section.title }}</h1>
+    <div class="list">
       {% for page in section.pages %}
-      <a class="note-item" href="{{ page.permalink | safe }}">
-        <div class="note-info">
-          <span>{{ page.date | date(format="%d %b %Y") }}</span>
+      <a class="item" href="{{ page.permalink | safe }}">
+        <hgroup>
+          <p>{{ page.date | date(format="%d %b %Y") }}</p>
           <h3>{{ page.title }}</h3>
-        </div>
+        </hgroup>
         <div>
           <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-arrow-up-right-icon lucide-arrow-up-right"><path d="M7 7h10v10"/><path d="M7 17 17 7"/></svg>
         </div>

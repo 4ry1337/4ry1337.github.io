@@ -7,69 +7,14 @@ About | {{ super() }}
 
 {% block content %}
 
-{% set personal = load_data(path="content/1_personal.toml", format="toml") %}
-{% set education = load_data(path="content/2_education.toml", format="toml") %}
-{% set experience = load_data(path="content/3_experience.toml", format="toml")%}
 
 {% set projects = load_data(path="content/4_projects.toml", format="toml") %}
-{% set skills = load_data(path="content/5_skills.toml", format="toml") %}
 
-<main class="container about">
-  <h1 class="about-title">My background</h1>
-  <div class="bio">
-    <div class="summary">
-      <p>{{ personal.summary }}</p>
-    </div>
-    <div class="skills">
-      <h3>Skills</h3>
-      <div class="skill-types">
-        {% for type in skills.types %}
-        <div>
-          <h6 class="skill-type">{{type}}</h6>
-          <ul class="skill-list">
-            {% for skill in skills.skills %}
-            {% if skill.type == type %}
-            <li class="badge">
-              {{ skill.name }}
-            </li>
-            {% endif %}
-            {% endfor %}
-          </ul>
-        </div>
-        {% endfor %}
-      </div>
-    </div>
-  </div>
-  <section class="experience">
-    <ul class="experience-list">
-      {% for experience in experience.experience %}
-      <li class="experience-item">
-        <h5 class="experience-date">
-          {{ experience.start_date | date(format="%b %Y") }} - {{
-          experience.end_date | date(format="%b %Y") }}
-        </h5>
-        <h3 class="experience-title">{{ experience.title }}</h3>
-        <h4 class="experience-company">{{ experience.company }}</h4>
-        <h5 class="experience-location">{{ experience.location }}</h5>
-        <ul class="experience-achievement-list">
-          {% for achievement in experience.achievements %}
-          <li>{{ achievement }}</li>
-          {% endfor %}
-        </ul>
-        <div class="experience-technology">
-          <h5>Used:</h5>
-          <ul class="experience-technology-list">
-            {% for technology in experience.technologies %}
-            <li>{{ technology }}</li>
-            {% endfor %}
-          </ul>
-        </div>
-      </li>
-      {% endfor %}
-    </ul>
-  </section>
+<main class="container">
+  {% include "widgets/about.html" %}
+  {% include "widgets/experience.html" %}
 </main>
-<pre>
-  {{ __tera_context }}
-</pre>
+<!-- <pre> -->
+<!--   {{ __tera_context }} -->
+<!-- </pre> -->
 {% endblock content %}
