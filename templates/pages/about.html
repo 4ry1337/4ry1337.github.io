@@ -7,12 +7,10 @@ About | {{ super() }}
 
 {% block content %}
 
-
-{% set projects = load_data(path="content/4_projects.toml", format="toml") %}
-
 <main class="container">
   {% include "widgets/about.html" %}
   {% include "widgets/experience.html" %}
+  {% include "widgets/education.html" %}
 </main>
 <!-- <pre> -->
 <!--   {{ __tera_context }} -->

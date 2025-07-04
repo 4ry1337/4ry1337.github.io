@@ -1,1 +1,41 @@
 {% set education = load_data(path="content/2_education.toml", format="toml") %}
+
+<section class="education">
+  <h2 class="header">Education</h2>
+  <div class="body">
+    {% for education in education.education %}
+    <table class="table">
+      <tr class="degree">
+        <th>
+          {{ education.start_date | date(format="%b") }}&nbsp;{{
+          education.start_date | date(format="%Y") }} - {{ education.end_date |
+          date(format="%b") }}&nbsp;{{ education.end_date | date(format="%Y") }}
+        </th>
+        <td>
+          <label>
+            {{ education.start_date | date(format="%b") }}&nbsp;{{
+            education.start_date | date(format="%Y") }} - {{ education.end_date
+            | date(format="%b") }}&nbsp;{{ education.end_date |
+            date(format="%Y") }}
+          </label>
+          <h3>{{ education.degree }}</h3>
+        </td>
+      </tr>
+      <tr class="gpa">
+        <th>GPA:</th>
+        <td>
+          <label>GPA:</label>
+          <p>{{ education.gpa }}/{{ education.gpa_scale }}</p>
+        </td>
+      </tr>
+      <tr class="institution">
+        <th>Institution:</th>
+        <td>
+          <label>Institution:</label>
+          <p>{{ education.institution }}, {{ education.location }}</p>
+        </td>
+      </tr>
+    </table>
+    {% endfor %}
+  </div>
+</section>
