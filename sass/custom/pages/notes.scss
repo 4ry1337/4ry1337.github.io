@@ -4,7 +4,7 @@
 .notes {
   @include padding(4, "x");
   @include padding(24, "y");
-  min-height: 100svh;
+  min-height: 100dvh;
   @include space(8, "y");
 
   >.header {

@@ -1,0 +1,37 @@
+[[projects]]
+url = "https://github.com/4ry1337/orta"
+title = "Blogging Platform"
+description = """
+A blogging platform for sharing digital creator stories with the audience with CRDT collaborative editing.
+"""
+highlights = [
+  "Developed a blogging platform for sharing digital creator stories with the audience as a diploma project, graded 95% within 3 months.",
+  "Utilized CRDT collaborative editing and rich media features to enhance collaboration and user retention.",
+  "Implemented efficient inter-service communication using a microservices architecture with Saga pattern.",
+]
+languages = ["Rust", "Typescript"]
+technologies = ["Axum", "Next.js", "gRPC", "PostgreSQL", "MinIO", "Docker"]
+
+[[projects]]
+url = "https://github.com/4ry1337/mini-projects/tree/master/maze_generator"
+title = "Maze Generation & Pathfinding"
+description = """
+A maze generator using Prim's algorithm and implemented A* pathfinding to find optimal routes.
+"""
+highlights = [
+  "Developed a maze generator using Prim's algorithm and implemented A* pathfinding to find optimal routes.",
+  "Optimized pathfinding efficiency by integrating a Min-Heap structure for f-score selection, reducing computational overhead and improving algorithm performance.",
+]
+languages = ["Rust"]
+
+[[projects]]
+url = "https://github.com/4ry1337/mini-projects/tree/master/huffman"
+title = "Huffman Compression"
+description = """
+Canonical Huffman algorithm to achieve efficient data compression.
+"""
+highlights = [
+  "Designed and implemented canonical Huffman encoding and decoding algorithms to achieve efficient data compression.",
+  "Optimized the decoding process by leveraging symbol-frequency pairs, resulting in faster lookups and improved overall performance.",
+]
+languages = ["Rust"]

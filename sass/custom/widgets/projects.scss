@@ -1,0 +1,32 @@
+@use '../../variables/index.scss' as *;
+@use '../../utilities/index.scss' as *;
+
+.projects {
+  @include padding(4, "x");
+  @include padding(2, "x");
+  @include space(2, "y");
+
+  >.title {}
+
+  >.list {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .item {
+    >.title {
+      margin-bottom: 0.5rem;
+    }
+
+    >.description {
+      color: var(--foreground);
+    }
+
+    >.highlights {
+      list-style-type: disc;
+      list-style-position: outside;
+
+      >li {}
+    }
+  }
+}
