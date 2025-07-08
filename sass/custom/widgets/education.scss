@@ -2,8 +2,8 @@
 @use '../../utilities/index.scss' as *;
 
 .education {
-  @include padding(24, "y");
-  @include space(16, "y");
+  @include margin(16, "y");
+  @include space(8, "y");
 
   >.header {
     @include padding(4, "x");
@@ -13,12 +13,14 @@
   >.body {
     display: grid;
     grid-template-columns: 1fr;
+    @include gap(2);
   }
 
   .table {
+    @include padding(4, "x");
     width: 100%;
     border-collapse: separate;
-    border-spacing: calc(8 * var(--spacing)) calc(4 * var(--spacing));
+    border-spacing: calc(4 * var(--spacing)) calc(4 * var(--spacing));
     table-layout: fixed;
 
     th {

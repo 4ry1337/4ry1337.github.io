@@ -2,31 +2,94 @@
 @use '../../utilities/index.scss' as *;
 
 .projects {
-  @include padding(4, "x");
-  @include padding(2, "x");
-  @include space(2, "y");
+  @include margin(16, "y");
+  @include space(8, "y");
 
-  >.title {}
-
-  >.list {
-    display: flex;
-    flex-direction: column;
+  >.header {
+    @include padding(4, "x");
+    color: var(--secondary);
   }
 
-  .item {
-    >.title {
-      margin-bottom: 0.5rem;
-    }
+  >.list {
+    @include padding(4, "x");
+    display: grid;
+    grid-template-columns: repeat(1, minmax(0, 1fr));
+    @include gap(8);
 
-    >.description {
+    @include lg {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+  }
+}
+
+.project {
+  flex: 1;
+  @include space(4, "y");
+
+  &_link {
+    height: calc(5 * var(--spacing));
+    width: calc(5 * var(--spacing));
+    color: var(--muted-foreground);
+
+    &:hover {
       color: var(--foreground);
     }
+  }
 
-    >.highlights {
+  &_highlights {
+    >label {
+      @include fluid-size(4, 4);
+      font-weight: 600;
+      @include margin(2, "b");
+
+      >svg {
+        height: calc(4 * var(--spacing));
+        width: calc(4 * var(--spacing));
+      }
+    }
+
+    >ul {
+      @include padding(6, "l");
       list-style-type: disc;
       list-style-position: outside;
+    }
+  }
 
-      >li {}
+  &_technologies {
+    >label {
+      @include fluid-size(4, 4);
+      font-weight: 600;
+      @include margin(2, "b");
+
+      >svg {
+        height: calc(4 * var(--spacing));
+        width: calc(4 * var(--spacing));
+      }
+    }
+
+    >ul {
+      display: flex;
+      flex-wrap: wrap;
+      @include gap(1);
+    }
+  }
+
+  &_languages {
+    >label {
+      @include fluid-size(4, 4);
+      font-weight: 600;
+      @include margin(2, "b");
+
+      >svg {
+        height: calc(4 * var(--spacing));
+        width: calc(4 * var(--spacing));
+      }
+    }
+
+    >ul {
+      display: flex;
+      flex-wrap: wrap;
+      @include gap(1);
     }
   }
 }

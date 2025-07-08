@@ -1,8 +1,8 @@
 @use '../../variables/index.scss' as *;
 @use '../../utilities/index.scss' as *;
 
-.about {
-  @include padding(24, "y");
+.background {
+  @include margin(16, "y");
   @include space(8, "y");
 
   >.header {
@@ -15,12 +15,12 @@
 
     display: grid;
     grid-template-columns: repeat(1, minmax(0, 1fr));
+    @include gap(12);
 
     @include sm {
       grid-template-columns: repeat(2, minmax(0, 1fr));
     }
 
-    @include gap(12);
 
     >p {
       @include padding(6, "r");

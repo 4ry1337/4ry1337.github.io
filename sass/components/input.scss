@@ -6,7 +6,7 @@ input {
   height: calc(var(--spacing) * 9);
   width: 100%;
   min-width: 0px;
-  @extend .radius-md;
+  @include rounded-md;
   @include padding(3, "x");
   @include padding(1, "y");
   border-width: 1px;
@@ -60,7 +60,7 @@ textarea {
   field-sizing: content;
   min-height: calc(var(--spacing) * 16);
   width: 100%;
-  @extend .radius-md;
+  @include rounded-md;
   border: 1px solid var(--input);
   @include padding(3, "x");
   @include padding(2, "y");

@@ -2,15 +2,16 @@
 @use '../../utilities/index.scss' as *;
 
 .hero {
+  @include padding(24, "y");
+
   min-height: 100dvh;
-  grid-template-areas: "top" "mid" "bot";
+  @include padding(2.5, "x");
 
   display: grid;
+  grid-template-areas: "top" "mid" "bot";
   place-items: center;
   text-align: center;
 
-  @include padding(2.5);
-  @include padding(24, "y");
 
   &_top {
     grid-area: "top";

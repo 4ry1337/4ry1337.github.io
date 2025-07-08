@@ -43,26 +43,22 @@
 }
 
 
-.radius-sm {
+@mixin rounded-sm {
   border-radius: calc(var(--radius) - 4px)
 }
 
-.radius-md {
+@mixin rounded-md {
   border-radius: calc(var(--radius) - 2px)
 }
 
-.radius-lg {
+@mixin rounded-lg {
   border-radius: var(--radius);
 }
 
-.radius-xl {
+@mixin rounded-xl {
   border-radius: calc(var(--radius) + 4px);
 }
 
 @mixin border-full {
   border-radius: 9999px;
-}
-
-.border-full {
-  @include border-full();
 }

@@ -2,36 +2,24 @@
 @use '../../utilities/index.scss' as *;
 
 .notes {
-  @include padding(4, "x");
-  @include padding(24, "y");
-  min-height: 100dvh;
+  @include margin(16, "y");
   @include space(8, "y");
 
   >.header {
     color: var(--secondary);
+    @include padding(4, "x");
   }
 
   >.list {
-    display: flex;
-    flex-direction: column;
-    /* grid-template-columns: repeat(1, minmax(0, 1fr));
-
-    @include md {
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-    }
-
-    @include xl {
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-    } */
-
-    @include gap(4);
+    @include space(2, "y");
+    @include padding(4, "x");
 
     >.item {
-      display: inline-flex;
+      display: flex;
       align-items: center;
 
-      @include padding(5, "y");
-      @include padding(2.5, "x");
+      @include padding(8, "x");
+      @include padding(4, "y");
 
       @include border-radius(2.5);
       outline: none;
@@ -49,22 +37,14 @@
 
       >hgroup {
         display: flex;
+        flex-grow: 1;
         flex-direction: column;
         @include margin(4, 'r');
-
-        >h3 {}
 
         >p {
           color: var(--muted-foreground)
         }
       }
-
-      >div {}
     }
   }
 }
-
-
-
-
-.note-button {}

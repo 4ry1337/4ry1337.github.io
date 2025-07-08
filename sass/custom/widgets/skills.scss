@@ -4,14 +4,13 @@
 .skills {
   @include space(4, "y");
   @include padding(4);
+  @include border-radius(3);
+  color: var(--surface-foreground);
+  background-color: var(--surface);
 
   @include sm {
     @include padding(8);
   }
-
-  @include border-radius(3);
-  color: var(--surface-foreground);
-  background-color: var(--surface);
 
   >.header {}
 

@@ -1,0 +1,60 @@
+@use "../variables/index.scss" as *;
+@use "../utilities/index.scss" as *;
+
+.card {
+  background-color: var(--surface);
+  color: var(--surface-foreground);
+  display: flex;
+  flex-direction: column;
+  @include gap(6);
+  @include rounded-xl;
+  border-width: 1px;
+  border-color: var(--border);
+  @include padding(6, "y");
+  @include shadow-sm;
+
+  &_header {
+    container-type: inline-size;
+    container-name: card-header;
+    display: grid;
+    grid-auto-rows: min-content;
+    grid-template-rows: auto auto;
+
+    &:has(&_action) {
+      grid-template-columns: 1fr auto;
+    }
+
+    align-items: start;
+    @include gap(1.5);
+    @include padding(6, "x");
+
+    /* "@container/card-header  */
+  }
+
+  &_.title {
+    font-weight: 600;
+    line-height: 1;
+  }
+
+  &_description {
+    @include fluid-size(4, 4);
+    color: var(--muted-foreground);
+  }
+
+  &_action {
+    grid-column-start: 2;
+    grid-row: 1 / span 2;
+    align-self: start;
+    justify-self: end;
+  }
+
+  &_content {
+    @include padding(6, "x");
+  }
+
+  &_footer {
+    display: flex;
+    align-items: center;
+    @include padding(6, "x");
+  }
+}

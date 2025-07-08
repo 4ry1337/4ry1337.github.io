@@ -2,11 +2,12 @@
 @use '../../utilities/index.scss' as *;
 
 .note {
-  @include padding(4, "x");
-  @include padding(24, "y");
+  @include margin(16, "y");
   @include space(16, "y");
 
   >header {
+    @include padding(4, "x");
+
     >.title {
       color: var(--secondary);
       @include fluid-size(17, 22);
@@ -14,10 +15,15 @@
   }
 
   >article {
+    @include padding(4, "x");
     @include space(8, "y");
   }
 
-  >aside {}
+  >aside {
+    @include padding(4, "x");
+  }
 
-  >footer {}
+  >footer {
+    @include padding(4, "x");
+  }
 }
