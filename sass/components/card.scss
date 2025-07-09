@@ -20,7 +20,7 @@
     grid-auto-rows: min-content;
     grid-template-rows: auto auto;
 
-    &:has(&_action) {
+    &:has(.card_action) {
       grid-template-columns: 1fr auto;
     }
 

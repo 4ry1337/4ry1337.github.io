@@ -13,17 +13,19 @@
       <a class="card item" href="{{ page.permalink | safe }}">
         <hgroup class="card_header">
           <h3 class="card_title">{{ page.title }}</h3>
-          {% if page.description %}
-          <p class="card_description">{{ page.description }}</p>
-          {% endif %}
-          <div class="note_meta">
-            <div>
-                <span class="label">Published: </span>
-                <span class="value">{{ page.date | date(format="%d %b %Y")}}</span>
-            </div>
-            <div>
-                <span class="label">Read time: </span>
-                <span class="value">{{ page.reading_time }} min</span>
+          <div class="card_description">
+            {% if page.description %}
+            <p>{{ page.description }}</p>
+            {% endif %}
+            <div class="note_meta">
+              <div>
+                  <div class="label">Published</div>
+                  <div class="value">{{ page.date | date(format="%d %b %Y")}}</div>
+              </div>
+              <div>
+                  <div class="label">Read time</div>
+                  <div class="value">{{ page.reading_time }} min</div>
+              </div>
             </div>
           </div>
           <div class="card_action">
