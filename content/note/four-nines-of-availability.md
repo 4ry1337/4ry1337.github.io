@@ -17,3 +17,4 @@ For solo devs that are rolling up some APIs means that your API should successfu
 You might think it is reasonable thing to do, but put it in perspective you can only afford up to 52 minutes of downtime throughout a whole year.
 
 Achieving four nines of availability is tough. Choose your VPSs correctly and write better containerization.
+

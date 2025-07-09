@@ -24,16 +24,21 @@ When you enter personal information online, like an email or password, it’s va
 
 Let's use my KASPI card number, which is VISA card
 
-```4400 4302 8383 0898```
+```
+4400 4302 8383 0898
+```
 
 Remove the check digit (last digit).\
 PAN without the check digit:
-```4400 4302 8383 089```
+
+```
+4400 4302 8383 089
+```
 The check digit is 8.
 
 Double every second digit, starting from the end (right to left):
 
-```
+```txt
 4 4 0 0 4 3 0 2 8 3 8 3 0 8 9
 x
 2 1 2 1 2 1 2 1 2 1 2 1 2 1 2
@@ -43,15 +48,14 @@ x
 
 Sum the value of resulting digits:
 
-```
+```txt
 8 + 4 + 0 + 0 + 8 + 3 + 0 + 2 + (1 + 6) + 3 + (1 + 6) + 3 + 0 + 8 + (1 + 8) = 62
-
 ```
 
 Apply the Luhn formula:
 
-```
-f(x) = (10 - (x mod 10)) mod 10
+```txt
+f(x)  = (10 - (x mod 10)) mod 10
 f(62) = (10 - (62 mod 10)) mod 10
       = (10 - 2) mod 10
       = 8

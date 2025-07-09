@@ -19,14 +19,21 @@
     </header>
     <div class="note_layout">
       <div class="note_body">
-        <article class="note_content">
+        <article id="article_content" class="note_content">
           {{ page.content | safe }} 
         </article>
-        <footer id="footer" class="note_footer">
-          {% if page.toc %}
+        <footer id="article_footer" class="note_footer">
+          {% if page.extra.sources %}
           <div class="note_sources">
+            <div class="label">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-share2-icon lucide-share-2"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.59" x2="15.42" y1="13.51" y2="17.49"/><line x1="15.41" x2="8.59" y1="6.51" y2="10.49"/></svg>
+              <span>Sources:</span>
+            </div>
+            {% for source in page.extra.sources %}
             <ul>
+              <li><a href="{{source | safe}}" target="_blank">{{source}}</a></li>
             </ul>
+            {% endfor %}
           </div>
           {% endif %}
         </footer>
@@ -53,6 +60,7 @@
                 </li>
                 {% endfor %}
                 {% endif %}
+                <li><a href="#article_footer">End</a></li>
               </ul>
             </nav>
           </div>

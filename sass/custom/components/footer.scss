@@ -17,42 +17,48 @@
   justify-content: end;
   @include gap(16);
 
-  >.header {
+  &_header {
     @include fluid-size(17, 40);
     text-transform: uppercase;
   }
 
-  >.list {
+  &_list {
     display: flex;
     flex-wrap: wrap;
     flex-direction: row;
     align-items: center;
     justify-content: center;
     @include gap(4);
+  }
 
-    >.item {
-      display: inline-flex;
-      flex-direction: row;
-      align-items: center;
-      justify-content: center;
-      @include gap(2);
+  &_item {
+    display: inline-flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    @include gap(2);
 
-      @include padding(4, "x");
-      @include padding(2, "y");
+    @include padding(4, "x");
+    @include padding(2, "y");
 
-      @include shadow-lg;
-      @include border-full();
+    @include shadow-lg;
+    @include border-full();
 
-      &:hover {
-        background-color: var(--primary);
-        color: var(--primary-foreground);
-        scale: 1.05;
-      }
-
-      svg {
-        height: calc(8 * var(--spacing));
-        width: calc(8 * var(--spacing));
-      }
+    &:hover {
+      background-color: var(--primary);
+      color: var(--primary-foreground);
+      scale: 1.05;
     }
+
+    svg {
+      height: calc(8 * var(--spacing));
+      width: calc(8 * var(--spacing));
+    }
+  }
+
+  &_subtitle {
+    display: flex;
+    flex-direction: column;
+    @include gap(1);
   }
 }

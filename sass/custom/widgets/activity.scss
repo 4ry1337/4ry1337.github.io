@@ -1,0 +1,45 @@
+@use '../../variables/index.scss' as *;
+@use '../../utilities/index.scss' as *;
+
+.activity {
+  @include margin(16, "y");
+  @include space(8, "y");
+
+  &_header {
+    @include padding(4, "x");
+    color: var(--secondary);
+  }
+
+  &_grid {
+    @include padding(4, "x");
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    @include gap(4);
+    align-items: center;
+  }
+
+  &_item {
+    img {
+      display: block;
+      max-width: 100%;
+      height: auto;
+      width: 100%;
+    }
+
+    &.item-0 {
+      grid-column: 1 / span 2;
+      grid-row: 1;
+    }
+
+    &.item-1 {
+      grid-column: 1;
+      grid-row: 2;
+    }
+
+    &.item-2 {
+      grid-column: 2;
+      grid-row: 2;
+    }
+  }
+}
