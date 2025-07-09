@@ -7,23 +7,91 @@
 
   >header {
     @include padding(4, "x");
+  }
 
-    >.title {
-      color: var(--secondary);
-      @include fluid-size(17, 22);
+  &_title {
+    color: var(--secondary);
+    @include fluid-size(17, 22);
+  }
+
+  &_description {}
+
+  &_meta {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    /* @include margin(); */
+
+    .label {
+      @include fluid-size(3, 4);
+      color: var(--muted-foreground);
+    }
+
+    .value {
+      @include fluid-size(4, 5);
+      color: var(--foreground);
     }
   }
 
-  >article {
-    @include padding(4, "x");
-    @include space(8, "y");
+  &_layout {
+    position: relative;
+    display: grid;
+    grid-template-columns: repeat(1, minmax(0, 1fr));
+    @include gap(2.5);
+
+    @include lg {
+      grid-template-columns: minmax(0, 3fr) minmax(0, 2fr);
+    }
   }
 
-  >aside {
+  &_body {}
+
+  &_content {
     @include padding(4, "x");
+    @include space(4, "y");
   }
 
-  >footer {
+  &_sidebar {
+    display: none;
+    position: sticky;
+    top: calc(2 * var(--spacing));
+    height: min-content;
+    max-height: calc(100vh - 4 * var(--spacing));
+    overflow: hidden auto;
+
+    @include padding(4, "x");
+    @include space(4, "y");
+
+    @include lg {
+      display: block;
+    }
+  }
+
+  &_navigation {
+    ul {
+      list-style-type: square;
+      list-style-position: outside;
+      padding-left: 1.5rem;
+
+      li {
+        @include margin(2, "y");
+
+        a {
+          white-space: normal;
+          color: var(--muted-foreground);
+
+
+          text-underline-offset: var(--spacing);
+
+          &:hover {
+            color: var(--foreground);
+            text-decoration: underline;
+          }
+        }
+      }
+    }
+  }
+
+  &_footer {
     @include padding(4, "x");
   }
 }

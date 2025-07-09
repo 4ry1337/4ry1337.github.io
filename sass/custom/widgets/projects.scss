@@ -5,12 +5,17 @@
   @include margin(16, "y");
   @include space(8, "y");
 
-  >.header {
+  &_header {
     @include padding(4, "x");
     color: var(--secondary);
   }
 
-  >.list {
+  &_footer {
+    @include padding(4, "x");
+    text-align: center;
+  }
+
+  &_list {
     @include padding(4, "x");
     display: grid;
     grid-template-columns: repeat(1, minmax(0, 1fr));
@@ -19,12 +24,20 @@
     @include lg {
       grid-template-columns: repeat(2, minmax(0, 1fr));
     }
+
+    @include xl {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
   }
 }
 
 .project {
   flex: 1;
   @include space(4, "y");
+
+  &_title {}
+
+  &_description {}
 
   &_link {
     height: calc(5 * var(--spacing));

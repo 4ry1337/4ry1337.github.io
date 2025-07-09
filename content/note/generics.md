@@ -2,7 +2,7 @@
 title = "Generics"
 date = 2024-11-08
 +++
-# Generics
+# Introduction
 
 Think of generics as a set of universal tools designed to handle various tasks efficiently. 
 
@@ -18,7 +18,7 @@ This led to the development of different techniques, each reflecting the needs a
 
 One of the earliest techniques was **templates**, introduced in C++. 
 
-## Templates
+# Templates
 
 ***Templates** let you write a function or class once, and the compiler would generate a version for each data type used.*
 
@@ -26,7 +26,7 @@ This process, called **monomorphization**, ensures optimized code for every type
 
 As programming needs evolved, developers sought more flexibility.
 
-## Type erasure
+# Type erasure
 
 Languages like Java introduced **type erasure**, which *keeps generics during compilation but removes type information at runtime.*
 
@@ -34,13 +34,13 @@ Think of it as writing a recipe with placeholders like "some ingredient" (`Objec
 
 To overcome these limitations, languages like Kotlin implemented **reified types**.
 
-## Reified types
+# Reified types
 
 ***Reified types** retain type information as metadata at runtime, giving more control and the ability to check types when needed.*
 
 Imagine a recipe that initially says "some ingredient" but can later reveal if it’s flour or sugar, depending on the context.
 
-## As a result
+# As a result
 
 Each of these techniques serves to make code more flexible and powerful.
 
