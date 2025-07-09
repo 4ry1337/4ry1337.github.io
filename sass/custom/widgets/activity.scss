@@ -13,33 +13,57 @@
   &_grid {
     @include padding(4, "x");
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: repeat(2, 1fr);
     @include gap(4);
     align-items: center;
+    grid-template-columns: repeat(1, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+
+    @include lg {
+      grid-template-columns: repeat(2, 1fr);
+      grid-template-rows: repeat(2, 1fr);
+    }
   }
 
   &_item {
+    display: flex;
+    flex-direction: column;
+    @include gap(2);
+
     img {
       display: block;
       max-width: 100%;
-      height: auto;
       width: 100%;
+      height: auto;
     }
 
     &.item-0 {
-      grid-column: 1 / span 2;
+      grid-column: 1;
       grid-row: 1;
+
+      @include lg {
+        grid-column: 1 / span 2;
+        grid-row: 1;
+      }
     }
 
     &.item-1 {
       grid-column: 1;
       grid-row: 2;
+
+      @include lg {
+        grid-column: 1;
+        grid-row: 2;
+      }
     }
 
     &.item-2 {
-      grid-column: 2;
-      grid-row: 2;
+      grid-column: 1;
+      grid-row: 3;
+
+      @include lg {
+        grid-column: 2;
+        grid-row: 2;
+      }
     }
   }
 }
