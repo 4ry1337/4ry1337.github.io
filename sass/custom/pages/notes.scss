@@ -15,17 +15,6 @@
     @include padding(4, "x");
 
     >.item {
-      display: flex;
-      align-items: center;
-
-      @include padding(8, "x");
-      @include padding(4, "y");
-
-      @include border-radius(2.5);
-      outline: none;
-      border: 1px solid currentColor;
-      @include shadow-md();
-
       &:hover {
         scale: 1.02;
       }
@@ -33,17 +22,6 @@
       &:focus-visible {
         border-color: var(--ring);
         @include ring(3px, oklch(from var(--ring) l c h / 0.5));
-      }
-
-      >hgroup {
-        display: flex;
-        flex-grow: 1;
-        flex-direction: column;
-        @include margin(4, 'r');
-
-        >p {
-          color: var(--muted-foreground)
-        }
       }
     }
   }

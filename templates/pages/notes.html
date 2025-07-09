@@ -10,12 +10,26 @@
     <h1 class="header">{{ section.title }}</h1>
     <div class="list">
       {% for page in section.pages %}
-      <a class="item" href="{{ page.permalink | safe }}">
-        <hgroup>
-          <p>{{ page.date | date(format="%d %b %Y") }}</p>
-          <h3>{{ page.title }}</h3>
+      <a class="card item" href="{{ page.permalink | safe }}">
+        <hgroup class="card_header">
+          <h3 class="card_title">{{ page.title }}</h3>
+          {% if page.description %}
+          <p class="card_description">{{ page.description }}</p>
+          {% endif %}
+          <div class="note_meta">
+            <div>
+                <span class="label">Published: </span>
+                <span class="value">{{ page.date | date(format="%d %b %Y")}}</span>
+            </div>
+            <div>
+                <span class="label">Read time: </span>
+                <span class="value">{{ page.reading_time }} min</span>
+            </div>
+          </div>
+          <div class="card_action">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-arrow-up-right-icon lucide-arrow-up-right"><path d="M7 7h10v10"/><path d="M7 17 17 7"/></svg>
+          </div>
         </hgroup>
-        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-arrow-up-right-icon lucide-arrow-up-right"><path d="M7 7h10v10"/><path d="M7 17 17 7"/></svg>
       </a>
       {% endfor %}
     </div>

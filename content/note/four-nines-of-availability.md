@@ -8,11 +8,11 @@ sources = [
     "https://www.zero2prod.com/index.html"
 ]
 +++
-What is a reliable software?
+# What is a reliable software?
 
-Reliable means a lot of things, for commerce it is SLA (Service Level Agreement) that companies are obligated to provide a certain level of reliability and compensate customers if this agreement is broken. If a user cannot access the system, it is – from the user's point of view – unavailable.
+Reliable means a lot of things, for commerce it is SLA (Service Level Agreement) that companies are obligated to provide a certain level of reliability and compensate customers if this agreement is broken. If a user cannot access the system, it is – from the user's point of view – *unavailable*.
 
-For solo devs that are rolling up some APIs means that your API should successfully respond to 99.99% of well-formed request, or often referred as "four nines of availability".
+For solo devs that are rolling up some APIs means that your API should successfully respond to 99.99% of well-formed request, or often referred as **"four nines of availability"**.
 
 You might think it is reasonable thing to do, but put it in perspective you can only afford up to 52 minutes of downtime throughout a whole year.
 

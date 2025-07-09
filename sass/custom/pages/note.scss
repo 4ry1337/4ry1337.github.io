@@ -19,7 +19,6 @@
   &_meta {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    /* @include margin(); */
 
     .label {
       @include fluid-size(3, 4);
@@ -47,7 +46,122 @@
 
   &_content {
     @include padding(4, "x");
-    @include space(4, "y");
+
+    h1 {
+      @include fluid-size(8, 10);
+      font-weight: 800;
+      text-wrap: balance;
+
+      &:not(:first-child) {
+        @include margin(10, "t");
+      }
+    }
+
+    h2 {
+      @include padding(2, "b");
+      @include fluid-size(6, 7);
+
+      &:first-child {
+        @include margin(0, "t");
+      }
+    }
+
+    h3 {
+      @include fluid-size(5, 6);
+      font-weight: 600;
+    }
+
+    h4 {
+      @include fluid-size(5, 5);
+      font-weight: 600;
+    }
+
+    p {
+      line-height: calc(7 * var(--spacing));
+
+      &:not(:first-child) {
+        @include margin(6, "t");
+      }
+    }
+
+    blockquote {
+      font-style: italic;
+      @include margin(6, "t");
+      @include padding(6, "l");
+      border-left-width: 2px;
+    }
+
+    table {
+      width: 100%;
+
+      tr {
+        margin: 0;
+        border-top: 1px solid;
+        padding: 0;
+
+        &:nth-child(even) {
+          background-color: var(--muted);
+        }
+      }
+
+      th {
+        border: 1px solid;
+        @include padding(4, "x");
+        @include padding(2, "y");
+        text-align: left;
+        font-weight: bold;
+
+        &[align="center"] {
+          text-align: center;
+        }
+
+        &[align="right"] {
+          text-align: right;
+        }
+      }
+
+      td {
+        border: 1px solid;
+        @include padding(4, "x");
+        @include padding(2, "y");
+        text-align: left;
+
+        &[align="center"] {
+          text-align: center;
+        }
+
+        &[align="right"] {
+          text-align: right;
+        }
+      }
+    }
+
+    ul,
+    ol {
+      @include margin(6, "y");
+      @include margin(6, "l");
+
+      >li {
+        @include margin(2, "t");
+      }
+    }
+
+    ul {
+      list-style-type: disc;
+    }
+
+    ol {
+      list-style-type: decimal;
+    }
+
+    code {
+      display: relative;
+      background-color: var(--muted);
+      position: relative;
+      @include border-radius(0.5);
+      @include padding(1);
+      font-weight: 600;
+    }
   }
 
   &_sidebar {
