@@ -6,7 +6,9 @@
   @include space(16, "y");
   @include padding(4, "x");
 
-  &_header {}
+  &_header {
+    color: var(--secondary);
+  }
 
   &_list {
     display: flex;
