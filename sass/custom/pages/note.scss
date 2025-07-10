@@ -11,9 +11,11 @@
 
   &_title {
     color: var(--secondary);
+    text-wrap: balance;
   }
 
   &_description {
+    text-wrap: balance;
     color: var(--muted-foreground);
   }
 
