@@ -1,17 +1,21 @@
 {% set skills = load_data(path="content/5_skills.toml", format="toml") %}
 
-<div class="skills">
-  <h3 class="header">SKILLS</h3>
-  <div class="body">
-    {% for type in skills.types %}
-    <div>
-      <h6 class="skill-type">{{type | upper}}</h6>
-      <ul class="skill-list">
-        {% for skill in skills.technical[type] %}
-        <li class="badge">{{ skill.name }}</li>
-        {% endfor %}
-      </ul>
-    </div>
-    {% endfor %}
+<div class="card">
+  <div class="card_header">
+    <h3 class="card_title">SKILLS</h3>
+  </div>
+  <div class="card_content">
+    <div class="skills">
+      {% for type in skills.types %}
+      <div>
+        <h6 class="skill-type">{{type | upper}}</h6>
+        <ul class="skill-list">
+          {% for skill in skills.technical[type] %}
+          <li class="badge">{{ skill.name }}</li>
+          {% endfor %}
+        </ul>
+      </div>
+      {% endfor %}
+  </div>
   </div>
 </div>
