@@ -1,0 +1,11 @@
+[package]
+name = "ary1337"
+version = "0.1.0"
+edition = "2024"
+
+[dependencies]
+askama = "0.14.0"
+# Parsing
+serde = { version = "1.0.219", features = ["derive"] }
+serde-aux = "4.7.0"
+serde_yaml = "0.9.34"
