@@ -1,0 +1,22 @@
+{% extends "layouts/base.html" %} {% block title %}Tags | {{ super() }} {%
+endblock title %} {% block content %}
+
+<main class="container">
+  <div class="tags">
+    <h1 class="tags_header">Tags ({{terms | length}})</h1>
+    <ul class="tags_list">
+      {% for t in terms %}
+      <li>
+        <a class="button sm ghost" href="{{ t.permalink }}">
+          {{ t.name }} ({{ t.page_count }})
+        </a>
+      </li>
+      {% endfor %}
+    </ul>
+  </div>
+  <!-- <pre>
+    {{ __tera_context }}
+  </pre> -->
+</main>
+
+{% endblock content %}

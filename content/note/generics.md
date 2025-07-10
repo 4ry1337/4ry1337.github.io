@@ -1,6 +1,9 @@
 +++
 title = "Generics"
 date = 2024-11-08
+description = "An exploration of generics in programming, covering templates, type erasure, and reified types across languages like C++, Java, and Kotlin."
+[taxonomies]
+tags = ["Generics", "Templates", "Type Erasure", "Reified Types", "Programming Languages", "Abstraction"]
 +++
 # Introduction
 

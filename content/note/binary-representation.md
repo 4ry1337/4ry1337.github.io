@@ -1,6 +1,9 @@
 +++
 title = "Understanding Binary Representation in Computers"
 date = 2024-08-14
+description = "A comprehensive explanation of how computers represent integers and real numbers using binary, two's complement, and IEEE 754 floating-point standards."
+[taxonomies]
+tags = ["Binary", "Two's Complement", "Floating Point", "IEEE 754", "Computer Architecture", "Bit Manipulation"]
 +++
 Computers store and process data using binary, a system of 0s and 1s. The smallest unit of data is a bit, which can be either 0 or 1. Bits are grouped into bytes (8 bits), which can represent a wider range of information. For instance, a 32-bit system processes data in chunks of 32 bits, allowing it to represent a wide range of values.
 

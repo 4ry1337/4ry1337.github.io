@@ -1,18 +1,13 @@
-{% extends "layouts/base.html" %}
+{% extends "layouts/base.html" %} {% block content %}
 
-{% block title %}
-{{section.title}} | {{ super() }}
-{%endblock title %}
-
-{% block content %}
 <main class="container">
   <div class="notes">
     <div class="notes_header">
-      <h1 class="notes_title">{{ section.title }}</h1>
-      <h5 class="notes_description"><a class="underline" href="/tags">Search by tags</a></h5>
+      <h1 class="notes_title">Notes | {{term.name}} ({{term.page_count}})</h1>
+      <h5 class="notes_description"><a class="underline" href="/tags">Go back</a></h5>
     </div>
     <div class="notes_list">
-      {% for page in section.pages %}
+      {% for page in term.pages %}
       <a class="card notes_item" href="{{ page.permalink | safe }}">
         <hgroup class="card_header">
           <h3 class="card_title">{{ page.title }}</h3>
@@ -42,4 +37,5 @@
     </div>
   </div>
 </main>
+
 {% endblock content %}

@@ -1,0 +1,16 @@
+@use '../../variables/index.scss' as *;
+@use '../../utilities/index.scss' as *;
+
+.tags {
+  @include margin(16, "y");
+  @include space(16, "y");
+  @include padding(4, "x");
+
+  &_header {}
+
+  &_list {
+    display: flex;
+    flex-wrap: wrap;
+    @include gap(2);
+  }
+}

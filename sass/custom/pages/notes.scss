@@ -3,26 +3,33 @@
 
 .notes {
   @include margin(16, "y");
-  @include space(8, "y");
+  @include padding(4, "x");
+  @include space(16, "y");
 
-  >.header {
-    color: var(--secondary);
-    @include padding(4, "x");
+  &_header {
+    @include space(4, "y");
   }
 
-  >.list {
+  &_title {
+    color: var(--secondary);
+  }
+
+  &_description {
+    color: var(--muted-foreground);
+  }
+
+  &_list {
     @include space(2, "y");
-    @include padding(4, "x");
+  }
 
-    >.item {
-      &:hover {
-        scale: 1.02;
-      }
+  &_item {
+    &:hover {
+      scale: 1.02;
+    }
 
-      &:focus-visible {
-        border-color: var(--ring);
-        @include ring(3px, oklch(from var(--ring) l c h / 0.5));
-      }
+    &:focus-visible {
+      border-color: var(--ring);
+      @include ring(3px, oklch(from var(--ring) l c h / 0.5));
     }
   }
 }

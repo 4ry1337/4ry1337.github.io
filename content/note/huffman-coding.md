@@ -1,6 +1,9 @@
 +++
 title = "Huffman Coding"
 date = 2024-06-19
+description = "A breakdown of Huffman Coding, a lossless compression algorithm that assigns variable-length binary codes based on character frequency to reduce data size efficiently."
+[taxonomies]
+tags = ["Compression", "Huffman Coding", "Data Structures", "Binary Trees", "Rust", "Algorithms"]
 
 [extra]
 sources = [

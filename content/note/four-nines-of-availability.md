@@ -1,6 +1,9 @@
 +++
 title = "Four Nines of Availability"
 date = 2025-01-02
+description = "An introduction to the concept of high availability in software systems, focusing on the significance of achieving 99.99% uptime and the challenges involved."
+[taxonomies]
+tags = ["Availability", "SLA", "Reliability", "DevOps", "Rust"]
 
 [extra]
 sources = [

@@ -1,6 +1,9 @@
 +++
 title = "Luhn Algorithm"
 date = 2024-10-15
+description = "Explore how the Luhn Algorithm validates payment card numbers by detecting input errors using a simple yet effective checksum formula."
+[taxonomies]
+tags = ["Validation", "Checksum", "Luhn Algorithm", "Finance", "Security", "Credit Cards"]
 +++
 # Introduction
 

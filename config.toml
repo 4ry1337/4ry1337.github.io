@@ -2,12 +2,15 @@ base_url = "https://4ry1337.github.io"
 
 title = "Rakhat Yskak"
 description = ""
+default_language = "en"
 
 compile_sass = false
 minify_html = true
 author = "Rakhat Yskak"
 generate_sitemap = true
+generate_feeds = true
 generate_robots_txt = true
+taxonomies = [{ name = "tags" }]
 build_search_index = true
 
 [markdown]

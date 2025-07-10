@@ -1,6 +1,9 @@
 +++
 title = "Double Buffer Pattern"
 date = 2024-09-01
+description = "An essential graphics technique that eliminates screen tearing by rendering frames to an off-screen buffer before displaying them."
+[taxonomies]
+tags = ["Game Development", "Graphics", "Rendering", "Double Buffering", "Performance", "C++", "Rust", "Game Programming Patterns"]
 
 [extra]
 sources = [

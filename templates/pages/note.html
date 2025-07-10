@@ -1,19 +1,19 @@
 {% extends "layouts/base.html" %} {% block content %}
 <main class="container">
   <div class="note">
-    <header>
+    <header class="note_header">
       <h1 class="note_title">{{ page.title }}</h1>
       {% if page.description %}
       <h3 class="note_description">{{ page.description }}</h3>
       {% endif %}
       <div class="note_meta">
         <div>
-            <div class="label">Published</div>
-            <div class="value">{{ page.date | date(format="%d %b %Y")}}</div>
+          <div class="label">Published</div>
+          <div class="value">{{ page.date | date(format="%d %b %Y")}}</div>
         </div>
         <div>
-            <div class="label">Read time</div>
-            <div class="value">{{ page.reading_time }} min</div>
+          <div class="label">Read time</div>
+          <div class="value">{{ page.reading_time }} min</div>
         </div>
       </div>
     </header>

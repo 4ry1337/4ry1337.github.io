@@ -9,4 +9,12 @@ a {
   line-height: 100%;
   letter-spacing: 0.05rem;
   font-weight: 600;
+
+  &.underline {
+    text-underline-offset: var(--spacing);
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
 }

@@ -5,8 +5,9 @@
   @include margin(16, "y");
   @include space(16, "y");
 
-  >header {
+  &_header {
     @include padding(4, "x");
+    @include space(8, "y");
   }
 
   &_title {
@@ -25,6 +26,7 @@
     @include gap(2);
 
     .label {
+      @include margin(1, "b");
       @include fluid-size(3, 4);
       color: var(--muted-foreground);
     }

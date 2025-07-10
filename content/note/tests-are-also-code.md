@@ -1,6 +1,9 @@
 +++
 title = "Tests are also code" 
 date = 2025-01-11
+description = "A reflection on how treating tests as first-class code can improve long-term maintainability, reliability, and developer experience."
+[taxonomies]
+tags = ["Testing", "TDD", "Software Engineering", "Code Quality", "Test Coverage", "Developer Experience"]
 +++
 
 # Introduction
