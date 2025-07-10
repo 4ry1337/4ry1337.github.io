@@ -11,10 +11,11 @@
 
   &_title {
     color: var(--secondary);
-    @include fluid-size(17, 22);
   }
 
-  &_description {}
+  &_description {
+    color: var(--muted-foreground);
+  }
 
   &_meta {
     display: grid;
