@@ -1,7 +1,7 @@
 {% set experience = load_data(path="content/3_experience.toml", format="toml")%}
 
 <section class="experience">
-  <h2 class="header">Experience</h2>
+  <h3 class="header">Experience</h3>
   <div class="body">
     {% for experience in experience.experience %}
     <table class="table">
@@ -9,13 +9,21 @@
         <th>
           {{ experience.start_date | date(format="%b") }}&nbsp;{{ experience.start_date | date(format="%Y") }}
           -
-          {{ experience.end_date | date(format="%b") }}&nbsp;{{ experience.end_date | date(format="%Y") }}
+          {% if experience.end_date is defined %}
+            {{ experience.end_date | date(format="%b") }}&nbsp;{{ experience.end_date | date(format="%Y") }}
+          {% else %}
+            Present
+          {% endif %}
         </th>
         <td>
           <label>
           {{ experience.start_date | date(format="%b") }}&nbsp;{{ experience.start_date | date(format="%Y") }}
           -
-          {{ experience.end_date | date(format="%b") }}&nbsp;{{ experience.end_date | date(format="%Y") }}
+          {% if experience.end_date is defined %}
+            {{ experience.end_date | date(format="%b") }}&nbsp;{{ experience.end_date | date(format="%Y") }}
+          {% else %}
+            Present
+          {% endif %}
           </label>
           <h3>{{ experience.title }}</h3>
         </td>
@@ -38,6 +46,17 @@
           <h5>{{ experience.location }}</h5>
         </td>
       </tr>
+      {% if experience.description is defined %}
+      <tr class="description">
+        <th>Description:</th>
+        <td>
+          <label>
+            Description:
+          </label>
+          <h5>{{ experience.description }}</h5>
+        </td>
+      </tr>
+      {% endif %}
       <tr class="achievements">
         <th>Achievements:</th>
         <td>
@@ -53,19 +72,21 @@
           </div>
         </td>
       </tr>
-      <tr class="technologies">
-        <th>Used:</th>
-        <td class="technology">
-          <label>
-            Used:
-          </label>
-          <ul class="list">
-            {% for technology in experience.technologies %}
-            <li class="badge">{{ technology }}</li>
-            {% endfor %}
-          </ul>
-        </td>
-      </tr>
+      {% if experience.technologies is defined %}
+        <tr class="technologies">
+          <th>Used:</th>
+          <td class="technology">
+            <label>
+              Used:
+            </label>
+            <ul class="list">
+              {% for technology in experience.technologies %}
+              <li class="badge">{{ technology }}</li>
+              {% endfor %}
+            </ul>
+          </td>
+        </tr>
+      {% endif %}
     </table>
     {% endfor %}
   </div>

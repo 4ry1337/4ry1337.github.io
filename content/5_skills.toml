@@ -1,4 +1,4 @@
-types = ["languages", "databases", "frameworks", "tools"]
+types = ["languages", "technologies", "tools"]
 levels = ["proficient", "familiar"]
 
 [[technical.languages]]
@@ -6,23 +6,71 @@ name = "Rust"
 level = "proficient"
 
 [[technical.languages]]
+name = "Typescript"
+level = "familiar"
+
+[[technical.languages]]
 name = "Javascrypt"
-level = "proficient"
+level = "familiar"
 
 [[technical.languages]]
 name = "C++"
 level = "familiar"
 
 [[technical.languages]]
-name = "SQL"
+name = "C"
 level = "familiar"
 
 [[technical.languages]]
-name = "Typescript"
+name = "SQL (PostgreSQL)"
 level = "familiar"
+
+[[technical.languages]]
+name = "Python"
+level = "familiar"
+
+[[technical.technologies]]
+name = "CUDA"
+level = "familiar"
+
+[[technical.technologies]]
+name = "Postgresql"
+level = "proficient"
+
+[[technical.technologies]]
+name = "Actix-Web"
+level = "proficient"
+
+[[technical.technologies]]
+name = "Axum"
+level = "proficient"
+
+[[technical.technologies]]
+name = "Next.js"
+level = "proficient"
+
+[[technical.technologies]]
+name = "TCP/IP"
+level = "proficient"
+
+[[technical.technologies]]
+name = "Linux Kernel"
+level = "proficient"
+
+[[technical.tools]]
+name = "Neovim"
+level = "proficient"
 
 [[technical.tools]]
 name = "Git"
+level = "proficient"
+
+[[technical.tools]]
+name = "Github Actions"
+level = "familiar"
+
+[[technical.tools]]
+name = "Linux"
 level = "proficient"
 
 [[technical.tools]]
@@ -32,23 +80,3 @@ level = "proficient"
 [[technical.tools]]
 name = "DigitalOcean"
 level = "familiar"
-
-[[technical.tools]]
-name = "Github Actions"
-level = "familiar"
-
-[[technical.databases]]
-name = "Postgresql"
-level = "proficient"
-
-[[technical.frameworks]]
-name = "Actix-Web"
-level = "proficient"
-
-[[technical.frameworks]]
-name = "Axum"
-level = "proficient"
-
-[[technical.frameworks]]
-name = "Next.js"
-level = "proficient"

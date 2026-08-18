@@ -1,4 +1,17 @@
 [[experience]]
+title = "Software Engineer"
+company = "Business & Technology Services LLP"
+location = "Astana, Kazakhstan"
+start_date = "2025-12-23"
+description = "Leading developer of enterprise software and industrial digitalization solutions."
+achievements = [
+  "Built a production 3D digital twins platform for 15 industrial facilities using Rust, Bevy, and WebGPU.",
+  "Migrated the rendering pipeline from WebGL to WebGPU and optimized the WebAssembly build pipeline, improving FPS by 10% using benchmark data.",
+  "Reduced HTTP requests by 50% by implementing a request coalescing system, merging concurrent duplicate requests into a single call.",
+  "Designed and built features from scratch: real-time sensor data visualization, live GPS asset tracking, and camera recording/playback tooling for performance benchmarking.",
+]
+
+[[experience]]
 title = "Rust Developer Internship"
 company = "Quartz Blockchain Development"
 location = "Remote"
@@ -23,11 +36,10 @@ company = "ROKY.ROCKS"
 location = "Astana, Kazakhstan"
 start_date = "2023-05-01"
 end_date = "2023-08-31"
+description = "Software outsourcing company providing end-to-end software development services."
 achievements = [
-  "Developed web service used by school league tournaments to stream matches",
-  "Optimized Web Socket service to improve stability by implementing long-polling",
-  "Resolved critical business issues by troubleshooting UI, Web Socket server, and email notification issues",
-  "Leveraged knowledge in caching and locally persistent data with microservice debugging",
+  "Contributed to sports event management system for 20+ schools using TypeScript and React.",
+  "Resolved UI rendering and email delivery issues affecting 500+ users.",
 ]
 technologies = [
   "Git",
